@@ -1,6 +1,10 @@
+'use client';
 import Image from "next/image";
+import { useState } from "react";
+import { FaRegChartBar, FaChevronDown } from "react-icons/fa";
 
 export default function Home() {
+  const [showReports, setShowReports] = useState(true);
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white">
       {/* Hero Section */}
@@ -15,29 +19,44 @@ export default function Home() {
           <span>😊</span> Watch the Video
         </button>
         {/* Live Reports */}
-        <div className="absolute right-8 top-1/2 transform -translate-y-1/2 hidden lg:block">
-          <div className="bg-white rounded-2xl shadow-lg p-6 w-72">
-            <div className="font-semibold mb-4 text-gray-800">Live Reports</div>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3">
-                <span className="inline-block w-3 h-3 bg-green-500 rounded-full"></span>
-                <span className="font-medium">New Range</span>
+        {showReports ? (
+          <div className="fixed right-8 bottom-8 z-30 bg-white rounded-2xl shadow-lg p-4 w-72 sm:w-64 flex flex-col">
+            <div className="font-semibold mb-2 text-gray-800">Live Reports</div>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
+                <span className="font-medium text-gray-700">New Range</span>
                 <span className="text-xs text-gray-400 ml-auto">Automated Compliance</span>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="inline-block w-3 h-3 bg-green-600 rounded-full"></span>
-                <span className="font-medium">Cactos</span>
+              <li className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 bg-green-600 rounded-full"></span>
+                <span className="font-medium text-gray-700">Cactos</span>
                 <span className="text-xs text-gray-400 ml-auto">Energy Systems</span>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="inline-block w-3 h-3 bg-green-400 rounded-full"></span>
-                <span className="font-medium">OpenAI</span>
+              <li className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 bg-green-400 rounded-full"></span>
+                <span className="font-medium text-gray-700">OpenAI</span>
                 <span className="text-xs text-gray-400 ml-auto">Machine Intelligence</span>
               </li>
             </ul>
-            <a href="#" className="block text-right text-xs text-[#7B61FF] mt-4 hover:underline">View All Recent Reports →</a>
+            <a href="#" className="block text-right text-xs text-[#7B61FF] mt-2 hover:underline">View All Recent Reports →</a>
+            <button
+              className="absolute left-2 bottom-2 bg-gray-100 rounded-full p-1 shadow hover:bg-gray-200 transition flex items-center"
+              title="Minimize"
+              onClick={() => setShowReports(false)}
+            >
+              <FaChevronDown className="text-gray-500" />
+            </button>
           </div>
-        </div>
+        ) : (
+          <button
+            className="fixed right-8 bottom-8 z-30 bg-white rounded-full shadow-lg p-3 flex items-center justify-center hover:bg-gray-100 transition"
+            title="Show Live Reports"
+            onClick={() => setShowReports(true)}
+          >
+            <FaRegChartBar className="text-[#7B61FF] text-xl" />
+          </button>
+        )}
         {/* Gradient background */}
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-r from-[#B6F09C] via-[#FFD6E0] to-[#B6E0FF] opacity-60 pointer-events-none" />
       </section>
