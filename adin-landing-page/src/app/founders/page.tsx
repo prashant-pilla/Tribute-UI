@@ -4,13 +4,23 @@ export default function FoundersPage() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center px-8 pt-16 pb-24 relative">
+      <section className="flex flex-col items-center justify-center text-center px-8 pt-16 pb-8 relative">
         <span className="inline-block border border-[#B6F09C] text-[#1A3A1A] px-3 py-1 rounded-full text-sm font-medium mb-4">Founders</span>
         <h1 className="text-4xl sm:text-5xl font-bold mb-4">Raise Smarter.<br />Get Backed by the Network.</h1>
         <p className="text-lg text-gray-600 mb-8">Members earn a 10% carry on deals they submit that ADIN approves and successfully closes.</p>
         <button className="bg-black text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-gray-800 transition flex items-center gap-2">Apply Now <span className="ml-1">→</span></button>
-        {/* Gradient background */}
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-r from-[#B6F09C] via-[#FFD6E0] to-[#B6E0FF] opacity-60 pointer-events-none" />
+        {/* Gradient bar below hero section (absolute, masked) */}
+        <div
+          className="absolute bottom-0 left-0 w-full h-20 z-0"
+          style={{
+            background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
+            opacity: 0.85,
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)',
+            maskImage:
+              'linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)',
+          }}
+        />
       </section>
 
       {/* Content Sections */}
@@ -90,16 +100,18 @@ export default function FoundersPage() {
           <button className="bg-[#7B61FF] text-white px-8 py-3 rounded-full font-semibold shadow hover:bg-[#a18aff] transition">Apply Now</button>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="w-full py-6 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between px-8 text-sm text-gray-500 bg-white">
-        <div className="flex gap-4 mb-2 md:mb-0">
-          <a href="#" className="hover:underline">Terms</a>
-          <a href="#" className="hover:underline">Privacy</a>
-          <a href="#" className="hover:underline">Contact</a>
-        </div>
-        <div>© {new Date().getFullYear()} ADIN. All rights reserved.</div>
-      </footer>
+      {/* Gradient bar just above the footer */}
+      <div
+        className="w-full h-32 z-0"
+        style={{
+          background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
+          opacity: 0.85,
+          WebkitMaskImage:
+            'linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)',
+          maskImage:
+            'linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)',
+        }}
+      />
     </div>
   );
 } 

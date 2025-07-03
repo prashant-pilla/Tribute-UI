@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { IoInformationCircleOutline, IoCashOutline, IoPeopleOutline, IoHammerOutline } from 'react-icons/io5';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'About', icon: IoInformationCircleOutline },
@@ -16,9 +17,11 @@ export default function Header() {
     <header className="flex items-center justify-between px-8 py-6 bg-white w-full">
       <div className="flex items-center gap-2">
         <Link href="/">
-          <div className="w-10 h-10 bg-yellow-300 rounded flex items-center justify-center font-bold text-2xl">😊</div>
+          <Image src="/assets/Logo.svg" alt="ADIN Logo" width={40} height={40} priority />
         </Link>
-        <span className="text-2xl font-bold text-[#FFB84D]">ADIN</span>
+        <Link href="/">
+          <Image src="/assets/Wordmark.svg" alt="ADIN Wordmark" width={90} height={32} priority />
+        </Link>
       </div>
       <nav className="flex gap-6 items-center">
         {navLinks.map((link) => {
