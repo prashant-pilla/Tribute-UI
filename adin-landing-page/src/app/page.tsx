@@ -312,6 +312,7 @@ export default function Home() {
         <div
           className="absolute bottom-0 left-0 w-full h-40"
           style={{
+            bottom: '-10px',
             zIndex: 0,
             background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
             opacity: 0.85,

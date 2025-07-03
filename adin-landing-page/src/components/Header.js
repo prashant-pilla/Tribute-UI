@@ -44,7 +44,7 @@ export default function Header() {
         })}
       </nav>
       <div className="flex gap-3 items-center">
-        <button className="text-gray-700 font-medium">Log In</button>
+        <button className="text-gray-700 font-medium pr-3">Log In</button>
         <button className="bg-[#FF7A4D] text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-[#ff9a7a] transition">Sign Up</button>
       </div>
     </header>

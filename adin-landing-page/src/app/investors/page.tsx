@@ -60,7 +60,7 @@ export default function InvestorsPage() {
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-8 pl-20 pt-12 pb-8 relative">
         <div className="flex-1 max-w-xl">
-          <span className="text-[#4D4D4D] font-medium text-base leading-5 font-inter border border-[#E6E6E6] px-3 py-1 rounded-full">
+          <span className="text-[#4D4D4D] font-medium text-base leading-5 font-inter border border-[#FFBF66] px-3 py-1 rounded-full">
             Investors
           </span>
           <h1
@@ -145,14 +145,14 @@ export default function InvestorsPage() {
           </div>
         </div>
         {/* Down arrow for scroll cue */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+        <div className="absolute bottom-11 left-1/2 -translate-x-1/2 z-10">
             <Image src="/assets/chevron-down.svg" alt="Scroll Down" width={24} height={24} className="animate-bounce opacity-60" />
           </div>
         {/* Gradient background fixed to viewport bottom, z-0 */}
         <div
           className="absolute bottom-0 left-0 w-full h-40"
           style={{
-            bottom: '-24px',
+            bottom: '-45px',
             zIndex: 0,
             background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
             opacity: 0.85,
