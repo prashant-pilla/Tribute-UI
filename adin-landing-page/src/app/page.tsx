@@ -652,12 +652,14 @@ export default function Home() {
             const categories = [
               { label: 'General', value: 'General' },
               { label: 'Pricing', value: 'Pricing' },
-            ];
-            const questions = {
+            ] as const;
+            type FaqCategory = 'General' | 'Pricing';
+            type FaqItem = { q: string; a: string; open?: boolean };
+            const questions: Record<FaqCategory, FaqItem[]> = {
               General: [
                 {
                   q: 'What is AdIn?',
-                  a: "ADIN is an AI-first, community-powered venture DAO that combines a network of AI-agents with human insight to identify and fund the best early-stage startups. Its engine ingests a company's deck or website and, in minutes, produces a comprehensive report covering team background, market landscape, competitive positioning, and evaluations from a five-agent AI \"venture board.\" Investors review these data-rich findings and vote. By marrying AI's analytical speed with the collective wisdom of a diverse investor community, ADIN enables faster, more transparent capital deployment and broader access to high-potential deals.",
+                  a: "ADIN is an AI-first, community-powered venture DAO that combines a network of AI-agents with human insight to identify and fund the best early-stage startups. Its engine ingests a company's deck or website and, in minutes, produces a comprehensive report covering team background, market landscape, competitive positioning, and evaluations from a five-agent AI 'venture board.' Investors review these data-rich findings and vote. By marrying AI's analytical speed with the collective wisdom of a diverse investor community, ADIN enables faster, more transparent capital deployment and broader access to high-potential deals.",
                   open: true,
                 },
                 {
@@ -698,12 +700,12 @@ export default function Home() {
             };
             return (
               <>
-                <div className="flex gap-3 mb-8">
+                <div className="flex gap-3 mb-5">
                   {categories.map((cat) => (
                     <button
                       key={cat.value}
                       type="button"
-                      onClick={() => setFaqCategory(cat.value)}
+                      onClick={() => setFaqCategory(cat.value as FaqCategory)}
                       className={`px-4 py-1 rounded-full text-sm font-medium border transition focus:outline-none ${faqCategory === cat.value
                         ? 'bg-[#7B61FF] text-white border-[#7B61FF]'
                         : 'bg-white text-[#7B61FF] border-[#7B61FF]'}`}
@@ -713,17 +715,17 @@ export default function Home() {
                   ))}
                 </div>
                 {/* Accordion */}
-                <div className="divide-y divide-[#E5E5E5] bg-white rounded-xl border border-[#E5E5E5]">
-                  {questions[faqCategory].map((item, idx) => (
+                <div className="divide-y divide-[#E5E5E5]">
+                  {questions[faqCategory as FaqCategory].map((item: FaqItem, idx: number) => (
                     <details key={item.q} className="group" {...(faqCategory === 'General' && idx === 0 ? { open: true } : {})}>
-                      <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black group-open:bg-[#F6F3FF] group-open:rounded-t-xl transition">
+                      <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition">
                         {item.q}
                         <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180">
                           <path d="M8 10l4 4 4-4" stroke="#A97DF5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </summary>
                       {item.a && (
-                        <div className="px-6 pb-5 pt-3 text-[#4D4D4D] text-base font-normal">
+                        <div className="px-6 pb-5 pt-0 text-[#4D4D4D] text-base font-normal">
                           {item.a}
                         </div>
                       )}
@@ -735,7 +737,7 @@ export default function Home() {
           })()}
         </section>
         {/* CTA - Invest with ADIN */}
-        <div className="flex flex-col items-center justify-center pt-8 pb-20">
+        <div className="flex flex-col items-center justify-center pt-0 pb-20">
           <h2
             style={{
               color: '#000',

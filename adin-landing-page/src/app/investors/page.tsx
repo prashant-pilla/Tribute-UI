@@ -1,152 +1,452 @@
+'use client';
 import Image from "next/image";
+import { useState } from "react";
 
 export default function InvestorsPage() {
+  // FAQ state and data copied from home page
+  const [faqCategory, setFaqCategory] = useState('General');
+  const categories = [
+    { label: 'General', value: 'General' },
+    { label: 'Pricing', value: 'Pricing' },
+  ] as const;
+  type FaqCategory = 'General' | 'Pricing';
+  type FaqItem = { q: string; a: string; open?: boolean };
+  const questions: Record<FaqCategory, FaqItem[]> = {
+    General: [
+      {
+        q: 'What is AdIn?',
+        a: "ADIN is an AI-first, community-powered venture DAO that combines a network of AI-agents with human insight to identify and fund the best early-stage startups. Its engine ingests a company's deck or website and, in minutes, produces a comprehensive report covering team background, market landscape, competitive positioning, and evaluations from a five-agent AI 'venture board.' Investors review these data-rich findings and vote. By marrying AI's analytical speed with the collective wisdom of a diverse investor community, ADIN enables faster, more transparent capital deployment and broader access to high-potential deals.",
+        open: true,
+      },
+      {
+        q: 'How is ADIN structured?',
+        a: 'ADIN is structured as a decentralized autonomous organization (DAO) with a network of investors, founders, and members. The community collaborates to source, evaluate, and support early-stage startups.',
+      },
+      {
+        q: 'What industries does ADIN focus on?',
+        a: 'ADIN focuses on a wide range of industries including AI, fintech, biotech, creative tools, climate, and more. The network is open to supporting innovation across sectors.',
+      },
+      {
+        q: "Wil tokenization fit into ADIN's model?",
+        a: 'Tokenization is being explored as a way to enhance transparency, governance, and participation within the ADIN ecosystem. More details will be shared as the model evolves.',
+      },
+      {
+        q: 'How can I get join the network?',
+        a: 'You can request access to join ADIN by submitting an application through our website. The team reviews applications and will reach out with next steps.',
+      },
+      {
+        q: 'Who made ADIN?',
+        a: 'ADIN was created by a team of experienced investors, operators, and technologists passionate about supporting early-stage innovation. For more details, please visit our About page.',
+      },
+    ],
+    Pricing: [
+      {
+        q: 'How much does it cost to join ADIN?',
+        a: 'Membership pricing varies depending on your role and level of participation. Please contact us or check our website for the latest details.',
+      },
+      {
+        q: 'Are there any hidden fees?',
+        a: 'There are no hidden fees. All costs and fees are transparently communicated during the onboarding process.',
+      },
+      {
+        q: 'Is there a free trial?',
+        a: 'We occasionally offer free trials or introductory periods for new members. Please check our website or contact support for current offers.',
+      },
+    ],
+  };
+
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-white">
+    <div className="min-h-screen flex flex-col font-sans bg-white relative overflow-x-hidden">
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-8 pt-12 pb-8 relative">
+      <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-8 pl-20 pt-12 pb-8 relative">
         <div className="flex-1 max-w-xl">
-          <span className="inline-block bg-[#FFF5D6] text-[#7B61FF] px-3 py-1 rounded-full text-sm font-medium mb-4">Investors</span>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">AI Will be the Best Investor.</h1>
-          <p className="text-lg text-gray-600 mb-8">ADIN and its agents automate venture, from diligence to making investment decisions, with deals sourced by investors and the ADIN member network.</p>
-          <button className="bg-black text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-gray-800 transition flex items-center gap-2">Apply Now <span className="ml-1">→</span></button>
+          <span className="text-[#4D4D4D] font-medium text-base leading-5 font-inter border border-[#E6E6E6] px-3 py-1 rounded-full">
+            Investors
+          </span>
+          <h1
+            style={{
+              color: '#000',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 56,
+              fontStyle: 'normal',
+              fontWeight: 600,
+              lineHeight: '64px',
+              marginBottom: '24px',
+              marginTop: '32px',
+            }}
+          >
+            AI Will be the<br />Best Investor.
+          </h1>
+          <p
+            style={{
+              maxWidth: 637,
+              color: '#000',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 22,
+              fontStyle: 'normal',
+              fontWeight: 400,
+              lineHeight: '32px',
+              marginBottom: '32px',
+            }}
+          >
+            ADIN and its agents automate venture, from diligence to making investment decisions, with deals sourced by investors and the ADIN member network.
+          </p>
+          <button
+            style={{
+              display: 'flex',
+              padding: '16px 24px',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 8,
+              borderRadius: 80,
+              border: '1px solid #FFBF66',
+              background: '#000',
+              cursor: 'pointer',
+              marginBottom: 100,
+            }}
+          >
+            <span
+              style={{
+                color: '#FFF',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 16,
+                fontStyle: 'normal',
+                fontWeight: 500,
+                lineHeight: '24px',
+              }}
+            >
+              Apply Now
+            </span>
+            <span
+              style={{
+                color: '#FFBF66',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 16,
+                fontStyle: 'normal',
+                fontWeight: 500,
+                lineHeight: '24px',
+              }}
+            >
+              →
+            </span>
+          </button>
         </div>
         <div className="flex-1 flex flex-col items-center">
-          {/* Card and voting mockup */}
+          {/* Card and voting mockup replaced with static image */}
           <div className="relative">
-            <div className="bg-gray-900 rounded-2xl w-64 h-40 flex items-end p-4 relative">
-              <span className="absolute top-3 left-3 bg-yellow-300 text-xs font-bold px-2 py-1 rounded-full">↻ 100%</span>
-              <span className="absolute top-3 right-3 text-2xl text-green-400">✕</span>
-              <div className="text-white">
-                <div className="font-semibold">Lane AI</div>
-                <div className="text-xs text-gray-300">Logistics</div>
-              </div>
-            </div>
-            <div className="absolute left-32 top-24 bg-white rounded-xl shadow-lg p-4 w-56">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center text-white text-xs">🧑‍💻</span>
-                <span className="font-medium">Scribe</span>
-                <span className="ml-auto text-green-600 font-semibold">For</span>
-                <span className="ml-2 text-green-500">＋</span>
-              </div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center text-white text-xs">✕</span>
-                <span className="font-medium">Lane AI</span>
-                <span className="ml-auto text-green-600 font-semibold">For</span>
-                <span className="ml-2 text-green-500">＋</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center text-white text-xs">S</span>
-                <span className="font-medium">Sona</span>
-                <span className="ml-auto text-red-600 font-semibold">Against</span>
-                <span className="ml-2 text-red-500">✕</span>
-              </div>
-            </div>
+            <Image
+              src="/assets/lane-ai-vote.png"
+              alt="Lane AI Voting Card"
+              width={420}
+              height={400}
+              className="rounded-2xl"
+              priority
+            />
           </div>
         </div>
-        {/* Gradient bar below hero section (absolute, masked) */}
+        {/* Down arrow for scroll cue */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+            <Image src="/assets/chevron-down.svg" alt="Scroll Down" width={24} height={24} className="animate-bounce opacity-60" />
+          </div>
+        {/* Gradient background fixed to viewport bottom, z-0 */}
         <div
-          className="absolute bottom-0 left-0 w-full h-20 z-0"
+          className="absolute bottom-0 left-0 w-full h-40"
           style={{
+            bottom: '-24px',
+            zIndex: 0,
             background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
             opacity: 0.85,
             WebkitMaskImage:
-              'linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)',
+              'linear-gradient(to bottom, transparent 0%, white 49%, white 51%, transparent 100%)',
             maskImage:
-              'linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)',
+              'linear-gradient(to bottom, transparent 0%, white 49%, white 51%, transparent 100%)',
           }}
         />
       </section>
 
       {/* Content Sections */}
-      <section className="max-w-4xl mx-auto px-4 py-12 space-y-16">
+      <section className="max-w-8xl mx-auto px-8 py-12 pl-0 space-y-16">
         {/* Power Player Section */}
         <div>
-          <h2 className="text-2xl font-bold mb-2">Be more than an <span className="text-[#7B61FF]">Investor</span>.<br />Be a power player.</h2>
-          <p className="text-gray-600 mb-6">Automate your investing journey through intelligent deal opportunities.</p>
-          {/* Mockup cards and stats */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl shadow p-6 flex flex-col gap-4">
-              <div className="font-semibold">Best new company</div>
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center text-white text-xs">✕</span>
-                <span>Lane AI</span>
-              </div>
-              <div className="text-xs text-gray-400">Logistics</div>
-            </div>
-            <div className="bg-white rounded-xl shadow p-6 flex flex-col gap-4">
-              <div className="font-semibold">Solution auto-votes 100%</div>
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center text-white text-xs">🧑‍💻</span>
-                <span>Scribe</span>
-                <span className="ml-auto text-green-600 font-semibold">For</span>
-                <span className="ml-2 text-green-500">＋</span>
-              </div>
-            </div>
+          <h2
+            style={{
+              color: '#000',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 56,
+              fontStyle: 'normal',
+              fontWeight: 600,
+              lineHeight: '64px',
+              marginBottom: 8,
+              textAlign: 'left',
+            }}
+          >
+            Be more than an <span style={{ color: '#FFBF66', fontFamily: 'Inter, sans-serif', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px' }}>Investor</span>.<br />Be a power player.
+          </h2>
+          <p
+            style={{
+              color: '#000',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 22,
+              fontStyle: 'normal',
+              fontWeight: 400,
+              lineHeight: '32px',
+              marginBottom: '24px',
+            }}
+          >
+            Accelerate your decision-making. Execute borderless investment opportunities.
+          </p>
+          <div style={{ marginBottom: '24px' }}>
+            <Image
+              src="/assets/real-time voting_submit a deal_investors.png"
+              alt="Real-time voting, submit a deal, investors"
+              width={1600}
+              height={800}
+              style={{ width: '100%', maxWidth: '1600px', height: 'auto', objectFit: 'contain' }}
+              priority
+            />
           </div>
         </div>
 
-        {/* Precision Section */}
+        {/* Power Player Section */}
         <div>
-          <h2 className="text-2xl font-bold mb-2">The precision of a machine.<br />The instincts of a community.</h2>
-          <p className="text-gray-600 mb-6">AI-driven investment ratings, together with peer validation and review.</p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl shadow p-6 flex flex-col gap-4">
-              <div className="font-semibold mb-2">Investors</div>
-              <div className="flex flex-wrap gap-2">
-                {/* Avatars */}
-                {[...Array(8)].map((_, i) => (
-                  <span key={i} className="w-8 h-8 bg-gray-200 rounded-full inline-block"></span>
-                ))}
-              </div>
+          <h2
+            style={{
+              color: '#000',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 56,
+              fontStyle: 'normal',
+              fontWeight: 600,
+              lineHeight: '64px',
+              marginBottom: 8,
+              textAlign: 'left',
+            }}
+          >
+            The precision of a machine.<br />The instincts of a community.
+          </h2>
+          <p
+            style={{
+              color: '#000',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 22,
+              fontStyle: 'normal',
+              fontWeight: 400,
+              lineHeight: '32px',
+              marginBottom: '24px',
+            }}
+          >
+            ADIN combines machine intellegence with the power of an expert hive mind.
+          </p>
+          <div style={{marginBottom: '24px' }}>
+            <Image
+              src="/assets/private-network_investors.png"
+              alt="Real-time voting, submit a deal, investors"
+              width={1600}
+              height={800}
+              style={{ width: '100%', maxWidth: '1600px', height: 'auto', objectFit: 'contain' }}
+              priority
+            />
+          </div>
+          <div style={{ marginBottom: '24px' }}>
+            <Image
+              src="/assets/ai-investor-dealflow_investors.png"
+              alt="Real-time voting, submit a deal, investors"
+              width={1600}
+              height={800}
+              style={{ width: '100%', maxWidth: '1600px', height: 'auto', objectFit: 'contain' }}
+              priority
+            />
+          </div>
+          </div>
+
+        {/* FAQ (copied from home page) */}
+        <section className="max-w-5xl mx-auto mt-24 mb-24 px-0">
+          <h2
+            style={{
+              alignSelf: 'stretch',
+              color: '#000',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 54,
+              fontWeight: 600,
+              lineHeight: '64px',
+              marginBottom: 10,
+              maxWidth: 1100,
+              width: '100%',
+              marginTop: 100,
+              marginRight: 'auto',
+              marginLeft: 'auto',
+              textAlign: 'left',
+            }}
+          >
+            Frequently<br />asked questions.
+          </h2>
+          <p
+            style={{
+              alignSelf: 'stretch',
+              color: '#000',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 19,
+              fontWeight: 400,
+              lineHeight: '32px',
+              marginBottom: 16,
+              maxWidth: 3000,
+              width: '100%',
+              marginTop: 5,
+              marginRight: 'auto',
+              marginLeft: 'auto',
+              textAlign: 'left',
+            }}
+          >
+            Here is a collection of what is asked most about ADIN.
+          </p>
+          {/* FAQ Category Buttons */}
+          <div className="flex gap-3 mb-5">
+            {categories.map((cat) => (
+              <button
+                key={cat.value}
+                type="button"
+                onClick={() => setFaqCategory(cat.value as FaqCategory)}
+                className={`px-4 py-1 rounded-full text-sm font-medium border transition focus:outline-none ${faqCategory === cat.value
+                  ? 'bg-[#7B61FF] text-white border-[#7B61FF]'
+                  : 'bg-white text-[#7B61FF] border-[#7B61FF]'}`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+          {/* Accordion */}
+          <div className="divide-y divide-[#E5E5E5]">
+            {questions[faqCategory as FaqCategory].map((item: FaqItem, idx: number) => (
+              <details key={item.q} className="group" {...(faqCategory === 'General' && idx === 0 ? { open: true } : {})}>
+                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition">
+                  {item.q}
+                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180">
+                    <path d="M8 10l4 4 4-4" stroke="#A97DF5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </summary>
+                {item.a && (
+                  <div className="px-6 pb-5 pt-0 text-[#4D4D4D] text-base font-normal">
+                    {item.a}
+                  </div>
+                )}
+              </details>
+            ))}
+          </div>
+        </section>
+        {/* CTA - Invest with ADIN */}
+        <div className="flex flex-col items-center justify-center pt-0 pb-20">
+          <h2
+            style={{
+              color: '#000',
+              textAlign: 'center',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 56,
+              fontStyle: 'normal',
+              fontWeight: 600,
+              lineHeight: '64px',
+              maxWidth: 1120,
+              marginBottom: 40,
+              marginTop: 0,
+              width: '100%',
+              marginRight: 'auto',
+              marginLeft: 'auto',
+              display: 'block',
+            }}
+          >
+            Ready to shape the future of investing?
+          </h2>
+          <div className="flex flex-col items-center w-full">
+            <div
+              className="flex items-center border rounded-[32px]"
+              style={{
+                border: '1px solid #F3EAFD',
+                background: '#FFF',
+                padding: '4px 4px 4px 24px',
+                alignItems: 'center',
+                gap: 16,
+                marginBottom: 10,
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: 16,
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  lineHeight: '20px',
+                  background: 'radial-gradient(62.52% 11.58% at 50% 50%, #A97DF5 0%, #B19AD9 100%)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  color: '#FFF',
+                  display: 'block',
+                }}
+              >
+                Early access for Tribute Labs Members
+              </span>
+              <button
+                className="flex items-center justify-center"
+                style={{
+                  borderRadius: 80,
+                  background: '#A97DF5',
+                  color: '#FFF',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: 16,
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  lineHeight: '20px',
+                  padding: '14px 24px',
+                  gap: 4,
+                  marginLeft: 16,
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s',
+                }}
+                aria-label="Get Started"
+              >
+                Get Started
+                <svg className="ml-2" width="20" height="20" fill="none" viewBox="0 0 20 20">
+                  <path d="M5 10h10M13 7l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
             </div>
-            <div className="bg-white rounded-xl shadow p-6 flex flex-col gap-4">
-              <div className="font-semibold mb-2">Top deal: Lane AI</div>
-              <div className="bg-gray-900 rounded-xl p-4 text-white">
-                <div className="font-semibold">Lane AI</div>
-                <div className="text-xs text-gray-300">Logistics</div>
-              </div>
+            <div
+              style={{
+                marginTop: 10,
+                color: '#A97DF5',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 16,
+                fontStyle: 'normal',
+                fontWeight: 500,
+                lineHeight: '20px',
+                textAlign: 'center',
+              }}
+            >
+              <span style={{ color: '#888' }}>Not a Tribute Labs Member? </span>
+              <a
+                href="#"
+                style={{ color: '#A97DF5', textDecoration: 'none', marginLeft: 4 }}
+                onMouseOver={e => (e.currentTarget.style.color = '#7B61FF')}
+                onMouseOut={e => (e.currentTarget.style.color = '#A97DF5')}
+              >
+                Join the Waitlist <span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
-        </div>
-
-        {/* FAQ */}
-        <div>
-          <h2 className="text-2xl font-bold mb-6">Frequently asked questions.</h2>
-          <div className="space-y-4">
-            <details className="bg-[#F6F3FF] rounded-lg p-4">
-              <summary className="font-semibold cursor-pointer">How does AI help investors?</summary>
-              <p className="mt-2 text-gray-600">AI helps automate diligence, voting, and deal sourcing, making the process faster and more data-driven.</p>
-            </details>
-            <details className="bg-[#F6F3FF] rounded-lg p-4">
-              <summary className="font-semibold cursor-pointer">What makes ADIN different?</summary>
-              <p className="mt-2 text-gray-600">ADIN combines AI precision with human judgment, ensuring the best of both worlds for investment decisions.</p>
-            </details>
-            <details className="bg-[#F6F3FF] rounded-lg p-4">
-              <summary className="font-semibold cursor-pointer">Can anyone become an investor?</summary>
-              <p className="mt-2 text-gray-600">Qualified individuals who share ADIN's vision can apply to join the investor network.</p>
-            </details>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="text-center pt-8">
-          <h2 className="text-2xl font-bold mb-4">Ready to shape the future of investing?</h2>
-          <button className="bg-[#7B61FF] text-white px-8 py-3 rounded-full font-semibold shadow hover:bg-[#a18aff] transition">Apply Now</button>
         </div>
       </section>
-      {/* Gradient bar just above the footer */}
+      {/* Bottom Gradient Bar above Footer */}
       <div
-        className="w-full h-32 z-0"
-        style={{
-          background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
-          opacity: 0.85,
-          WebkitMaskImage:
-            'linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)',
-          maskImage:
-            'linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)',
-        }}
-      />
+          className="absolute bottom-0 left-0 w-full h-40"
+          style={{
+            zIndex: 0,
+            background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
+            opacity: 0.85,
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 0%, white 49%, white 51%, transparent 100%)',
+            maskImage:
+              'linear-gradient(to bottom, transparent 0%, white 100%, white 51%, transparent 100%)',
+          }}
+        />
     </div>
   );
-} 
+}
