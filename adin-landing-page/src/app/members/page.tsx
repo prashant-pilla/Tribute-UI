@@ -235,7 +235,7 @@ export default function MembersPage() {
               marginLeft: 90,
             }}
           >
-            Compared to traditional Venture Capital scout programs, ADIN's<br />payouts reward members for being apart of the network.
+            Compared to traditional Venture Capital scout programs, ADIN&apos;s<br />payouts reward members for being apart of the network.
           </p>
         {/* Deal Calculator Cell */}
         <div className="max-w-5xl mx-auto rounded-3xl border border-[#E5E0F6] bg-white shadow-sm p-8 mt-4 mb-12" style={{ boxShadow: '0 2px 16px 0 rgba(80, 80, 120, 0.06)' }}>
@@ -293,7 +293,7 @@ export default function MembersPage() {
                       <Image src="/assets/accessibility.svg" alt="Finder Status" width={22} height={22} />
                       Finder Status
                     </span>
-                    <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>You're a "finder", not a Partner.</span>
+                    <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>You&apos;re a &quot;finder&quot;, not a Partner.</span>
                   </li>
                 </ul>
                 <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #F3655B', background: 'linear-gradient(0deg, rgba(243, 101, 91, 0.10) 0%, rgba(243, 101, 91, 0.10) 100%), #FFF', padding: '8px 12px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#000', overflow: 'hidden', textOverflow: 'ellipsis'}}>
@@ -341,7 +341,7 @@ export default function MembersPage() {
                       <Image src="/assets/people.svg" alt="Full Support" width={22} height={22} />
                       Full Support
                     </span>
-                    <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Backed by ADIN's infrastructure.</span>
+                    <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Backed by ADIN&apos;s infrastructure.</span>
                   </li>
                 </ul>
                 <div className="flex flex-nowrap gap-3 mt-2 overflow-x-auto" style={{width: '100%'}}>
@@ -467,7 +467,7 @@ export default function MembersPage() {
           <div className="flex-1 min-w-[320px] max-w-[520px]">
             <h2 style={{fontFamily: 'Inter', fontWeight: 700, fontSize: 40, lineHeight: '48px', color: '#000', marginBottom: 8}}>How to earn<br/>your 10% carry.</h2>
             <div style={{fontFamily: 'Inter', fontWeight: 400, fontSize: 16, lineHeight: '24px', color: '#222', marginBottom: 32}}>
-              <span style={{fontStyle: 'italic'}}>"Carry"</span> is a boomer term for "cash back".
+              <span style={{fontStyle: 'italic'}}>&quot;Carry&quot;</span> is a boomer term for &quot;cash back&quot;.
             </div>
             <div className="border-l-2 border-[#E5E5E5] pl-8 relative" style={{marginTop: 8}}>
               {/* Step 1 */}
@@ -476,7 +476,7 @@ export default function MembersPage() {
                 <span style={{position: 'absolute', left: '-34px', top: '20px', width: 4, height: 28, borderRadius: 2, background: '#FFE233', display: 'block'}} />
                 <div style={{fontFamily: 'Inter', fontWeight: 500, fontSize: 14, color: '#222', marginBottom: 2}}>Step 1</div>
                 <div style={{fontFamily: 'Inter', fontWeight: 700, fontSize: 18, color: '#000', marginBottom: 2}}>Spot something great.</div>
-                <div style={{fontFamily: 'Inter', fontWeight: 400, fontSize: 14, color: '#222'}}>You meet a founder or discover a startup you believe in. You don't need to be an expert or just have a strong conviction in the team.</div>
+                <div style={{fontFamily: 'Inter', fontWeight: 400, fontSize: 14, color: '#222'}}>You meet a founder or discover a startup you believe in. You don&apos;t need to be an expert or just have a strong conviction in the team.</div>
               </div>
               {/* Step 2 */}
               <div style={{marginBottom: 32, position: 'relative'}}>
@@ -484,7 +484,7 @@ export default function MembersPage() {
                 <span style={{position: 'absolute', left: '-34px', top: '20px', width: 4, height: 28, borderRadius: 2, background: '#7CF29C', display: 'block'}} />
                 <div style={{fontFamily: 'Inter', fontWeight: 500, fontSize: 14, color: '#222', marginBottom: 2}}>Step 2</div>
                 <div style={{fontFamily: 'Inter', fontWeight: 700, fontSize: 18, color: '#000', marginBottom: 2}}>Share the deal.</div>
-                <div style={{fontFamily: 'Inter', fontWeight: 400, fontSize: 14, color: '#222'}}>Upload the link or deck. We'll ask a few quick questions (and confirm you can intro the founder if needed).</div>
+                <div style={{fontFamily: 'Inter', fontWeight: 400, fontSize: 14, color: '#222'}}>Upload the link or deck. We&apos;ll ask a few quick questions (and confirm you can intro the founder if needed).</div>
               </div>
               {/* Step 3 */}
               <div style={{marginBottom: 32, position: 'relative'}}>
@@ -492,7 +492,7 @@ export default function MembersPage() {
                 <span style={{position: 'absolute', left: '-34px', top: '20px', width: 4, height: 28, borderRadius: 2, background: '#FF6F91', display: 'block'}} />
                 <div style={{fontFamily: 'Inter', fontWeight: 500, fontSize: 14, color: '#222', marginBottom: 2}}>Step 3</div>
                 <div style={{fontFamily: 'Inter', fontWeight: 700, fontSize: 18, color: '#000', marginBottom: 2}}>ADIN gets to work.</div>
-                <div style={{fontFamily: 'Inter', fontWeight: 400, fontSize: 14, color: '#222'}}>Our AI dives in—analyzing the market, product, team, and traction. You'll see how your deal stacks up in real time.</div>
+                <div style={{fontFamily: 'Inter', fontWeight: 400, fontSize: 14, color: '#222'}}>Our AI dives in—analyzing the market, product, team, and traction. You&apos;ll see how your deal stacks up in real time.</div>
               </div>
               {/* Step 4 */}
               <div style={{marginBottom: 32, position: 'relative'}}>
