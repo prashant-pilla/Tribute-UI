@@ -373,9 +373,9 @@ export default function InvestorsPage() {
           >
             Ready to shape the future of investing?
           </h2>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center w-full max-w-sm sm:max-w-none">
             <div
-              className="flex items-center border rounded-[32px]"
+              className="flex items-center border rounded-[32px] w-full"
               style={{
                 border: '1px solid #F3EAFD',
                 background: '#FFF',
@@ -384,7 +384,7 @@ export default function InvestorsPage() {
               }}
             >
               <span
-                className="text-[12px] sm:text-[16px] font-medium"
+                className="text-[12px] sm:text-[16px] font-medium flex-shrink-0"
                 style={{
                   fontFamily: 'Inter, sans-serif',
                   fontWeight: 500,
@@ -400,7 +400,7 @@ export default function InvestorsPage() {
                 Early access for Tribute Labs Members
               </span>
               <button
-                className="flex items-center justify-center text-[14px] sm:text-[16px] px-3 py-1 sm:px-6 sm:py-3"
+                className="flex items-center justify-center text-[14px] sm:text-[16px] px-3 py-1 sm:px-6 sm:py-3 flex-shrink-0"
                 style={{
                   borderRadius: 80,
                   background: '#A97DF5',
