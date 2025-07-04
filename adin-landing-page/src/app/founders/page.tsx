@@ -14,7 +14,7 @@ export default function FoundersPage() {
   const questions: Record<FaqCategory, FaqItem[]> = {
     General: [
       {
-        q: 'What is AdIn?',
+        q: 'What is ADIN?',
         a: "ADIN is an AI-first, community-powered venture DAO that combines a network of AI-agents with human insight to identify and fund the best early-stage startups. Its engine ingests a company's deck or website and, in minutes, produces a comprehensive report covering team background, market landscape, competitive positioning, and evaluations from a five-agent AI 'venture board.' Investors review these data-rich findings and vote. By marrying AI's analytical speed with the collective wisdom of a diverse investor community, ADIN enables faster, more transparent capital deployment and broader access to high-potential deals.",
         open: true,
       },

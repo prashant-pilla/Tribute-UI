@@ -14,7 +14,7 @@ export default function InvestorsPage() {
   const questions: Record<FaqCategory, FaqItem[]> = {
     General: [
       {
-        q: 'What is AdIn?',
+        q: 'What is ADIN?',
         a: "ADIN is an AI-first, community-powered venture DAO that combines a network of AI-agents with human insight to identify and fund the best early-stage startups. Its engine ingests a company's deck or website and, in minutes, produces a comprehensive report covering team background, market landscape, competitive positioning, and evaluations from a five-agent AI 'venture board.' Investors review these data-rich findings and vote. By marrying AI's analytical speed with the collective wisdom of a diverse investor community, ADIN enables faster, more transparent capital deployment and broader access to high-potential deals.",
         open: true,
       },
@@ -352,17 +352,17 @@ export default function InvestorsPage() {
           </div>
         </section>
         {/* CTA - Invest with ADIN */}
-        <div className="flex flex-col items-center justify-center pt-0 pb-20 px-4">
+        <div className="flex flex-col items-center justify-center pt-0 pb-20 px-4 w-full max-w-full">
           <h2
             style={{
               color: '#000',
               textAlign: 'center',
               fontFamily: 'Inter, sans-serif',
-              fontSize: 56,
+              fontSize: 'clamp(32px, 8vw, 56px)',
               fontStyle: 'normal',
               fontWeight: 600,
-              lineHeight: '64px',
-              maxWidth: 1120,
+              lineHeight: '1.1',
+              maxWidth: 'min(1120px, 90vw)',
               marginBottom: 40,
               marginTop: 0,
               width: '100%',
@@ -373,9 +373,9 @@ export default function InvestorsPage() {
           >
             Ready to shape the future of investing?
           </h2>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center w-full max-w-full">
             <div
-              className="flex items-center border rounded-[32px]"
+              className="flex items-center border rounded-[32px] w-full max-w-full flex-wrap"
               style={{
                 border: '1px solid #F3EAFD',
                 background: '#FFF',
@@ -400,7 +400,7 @@ export default function InvestorsPage() {
                 Early access for Tribute Labs Members
               </span>
               <button
-                className="flex items-center justify-center text-[14px] sm:text-[16px] px-3 py-1 sm:px-6 sm:py-3"
+                className="flex items-center justify-center text-[14px] sm:text-[16px] px-3 py-1 sm:px-6 sm:py-3 flex-shrink-0"
                 style={{
                   borderRadius: 80,
                   background: '#A97DF5',
