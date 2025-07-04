@@ -107,7 +107,95 @@ const humans = [
     bg: "#F6F3FF",
   },
 ];
+function FaqSection() {
+  const [faqCategory, setFaqCategory] = useState('General');
+  const categories = [
+    { label: 'General', value: 'General' },
+    { label: 'Pricing', value: 'Pricing' },
+  ] as const;
+  type FaqCategory = 'General' | 'Pricing';
+  type FaqItem = { q: string; a: string; open?: boolean };
+  const questions: Record<FaqCategory, FaqItem[]> = {
+    General: [
+      {
+        q: 'What is AdIn?',
+        a: "ADIN is an AI-first, community-powered venture DAO that combines a network of AI-agents with human insight to identify and fund the best early-stage startups. Its engine ingests a company's deck or website and, in minutes, produces a comprehensive report covering team background, market landscape, competitive positioning, and evaluations from a five-agent AI 'venture board.' Investors review these data-rich findings and vote. By marrying AI's analytical speed with the collective wisdom of a diverse investor community, ADIN enables faster, more transparent capital deployment and broader access to high-potential deals.",
+        open: true,
+      },
+      {
+        q: 'How is ADIN structured?',
+        a: 'ADIN is structured as a decentralized autonomous organization (DAO) with a network of investors, founders, and members. The community collaborates to source, evaluate, and support early-stage startups.',
+      },
+      {
+        q: 'What industries does ADIN focus on?',
+        a: 'ADIN focuses on a wide range of industries including AI, fintech, biotech, creative tools, climate, and more. The network is open to supporting innovation across sectors.',
+      },
+      {
+        q: "Will tokenization fit into ADIN&apos;s model?",
+        a: 'Tokenization is being explored as a way to enhance transparency, governance, and participation within the ADIN ecosystem. More details will be shared as the model evolves.',
+      },
+      {
+        q: 'How can I join the network?',
+        a: 'You can request access to join ADIN by submitting an application through our website. The team reviews applications and will reach out with next steps.',
+      },
+      {
+        q: 'Who made ADIN?',
+        a: 'ADIN was created by a team of experienced investors, operators, and technologists passionate about supporting early-stage innovation. For more details, please visit our About page.',
+      },
+    ],
+    Pricing: [
+      {
+        q: 'How much does it cost to join ADIN?',
+        a: 'Membership pricing varies depending on your role and level of participation. Please contact us or check our website for the latest details.',
+      },
+      {
+        q: 'Are there any hidden fees?',
+        a: 'There are no hidden fees. All costs and fees are transparently communicated during the onboarding process.',
+      },
+      {
+        q: 'Is there a free trial?',
+        a: 'We occasionally offer free trials or introductory periods for new members. Please check our website or contact support for current offers.',
+      },
+    ],
+  };
 
+  return (
+    <>
+      <div className="flex gap-3 mb-5">
+        {categories.map((cat) => (
+          <button
+            key={cat.value}
+            type="button"
+            onClick={() => setFaqCategory(cat.value as FaqCategory)}
+            className={`px-4 py-1 rounded-full text-sm font-medium border transition focus:outline-none ${faqCategory === cat.value
+              ? 'bg-[#7B61FF] text-white border-[#7B61FF]'
+              : 'bg-white text-[#7B61FF] border-[#7B61FF]'}`}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+      {/* Accordion */}
+      <div className="divide-y divide-[#E5E5E5]">
+        {questions[faqCategory as FaqCategory].map((item: FaqItem, idx: number) => (
+          <details key={item.q} className="group" {...(faqCategory === 'General' && idx === 0 ? { open: true } : {})}>
+            <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition">
+              {item.q}
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180">
+                <path d="M8 10l4 4 4-4" stroke="#A97DF5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </summary>
+            {item.a && (
+              <div className="px-6 pb-5 pt-0 text-[#4D4D4D] text-base font-normal">
+                {item.a}
+              </div>
+            )}
+          </details>
+        ))}
+      </div>
+    </>
+  );
+}
 export default function Home() {
   const [carouselIndex, setCarouselIndex] = useState(2); // Start with 'biotech' centered
   const [isPaused, setIsPaused] = useState(false);
@@ -647,94 +735,7 @@ export default function Home() {
           Here is a collection of what is asked most about ADIN.
         </p>
           {/* FAQ Category Buttons */}
-          {(() => {
-            const [faqCategory, setFaqCategory] = useState('General');
-            const categories = [
-              { label: 'General', value: 'General' },
-              { label: 'Pricing', value: 'Pricing' },
-            ] as const;
-            type FaqCategory = 'General' | 'Pricing';
-            type FaqItem = { q: string; a: string; open?: boolean };
-            const questions: Record<FaqCategory, FaqItem[]> = {
-              General: [
-                {
-                  q: 'What is AdIn?',
-                  a: "ADIN is an AI-first, community-powered venture DAO that combines a network of AI-agents with human insight to identify and fund the best early-stage startups. Its engine ingests a company's deck or website and, in minutes, produces a comprehensive report covering team background, market landscape, competitive positioning, and evaluations from a five-agent AI 'venture board.' Investors review these data-rich findings and vote. By marrying AI's analytical speed with the collective wisdom of a diverse investor community, ADIN enables faster, more transparent capital deployment and broader access to high-potential deals.",
-                  open: true,
-                },
-                {
-                  q: 'How is ADIN structured?',
-                  a: 'ADIN is structured as a decentralized autonomous organization (DAO) with a network of investors, founders, and members. The community collaborates to source, evaluate, and support early-stage startups.',
-                },
-                {
-                  q: 'What industries does ADIN focus on?',
-                  a: 'ADIN focuses on a wide range of industries including AI, fintech, biotech, creative tools, climate, and more. The network is open to supporting innovation across sectors.',
-                },
-                {
-                  q: "Wil tokenization fit into ADIN's model?",
-                  a: 'Tokenization is being explored as a way to enhance transparency, governance, and participation within the ADIN ecosystem. More details will be shared as the model evolves.',
-                },
-                {
-                  q: 'How can I get join the network?',
-                  a: 'You can request access to join ADIN by submitting an application through our website. The team reviews applications and will reach out with next steps.',
-                },
-                {
-                  q: 'Who made ADIN?',
-                  a: 'ADIN was created by a team of experienced investors, operators, and technologists passionate about supporting early-stage innovation. For more details, please visit our About page.',
-                },
-              ],
-              Pricing: [
-                {
-                  q: 'How much does it cost to join ADIN?',
-                  a: 'Membership pricing varies depending on your role and level of participation. Please contact us or check our website for the latest details.',
-                },
-                {
-                  q: 'Are there any hidden fees?',
-                  a: 'There are no hidden fees. All costs and fees are transparently communicated during the onboarding process.',
-                },
-                {
-                  q: 'Is there a free trial?',
-                  a: 'We occasionally offer free trials or introductory periods for new members. Please check our website or contact support for current offers.',
-                },
-              ],
-            };
-            return (
-              <>
-                <div className="flex gap-3 mb-5">
-                  {categories.map((cat) => (
-                    <button
-                      key={cat.value}
-                      type="button"
-                      onClick={() => setFaqCategory(cat.value as FaqCategory)}
-                      className={`px-4 py-1 rounded-full text-sm font-medium border transition focus:outline-none ${faqCategory === cat.value
-                        ? 'bg-[#7B61FF] text-white border-[#7B61FF]'
-                        : 'bg-white text-[#7B61FF] border-[#7B61FF]'}`}
-                    >
-                      {cat.label}
-                    </button>
-                  ))}
-                </div>
-                {/* Accordion */}
-                <div className="divide-y divide-[#E5E5E5]">
-                  {questions[faqCategory as FaqCategory].map((item: FaqItem, idx: number) => (
-                    <details key={item.q} className="group" {...(faqCategory === 'General' && idx === 0 ? { open: true } : {})}>
-                      <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition">
-                        {item.q}
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180">
-                          <path d="M8 10l4 4 4-4" stroke="#A97DF5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </summary>
-                      {item.a && (
-                        <div className="px-6 pb-5 pt-0 text-[#4D4D4D] text-base font-normal">
-                          {item.a}
-                        </div>
-                      )}
-                    </details>
-                  ))}
-                </div>
-              </>
-            );
-          })()}
+         <FaqSection />
         </section>
         {/* CTA - Invest with ADIN */}
         <div className="flex flex-col items-center justify-center pt-0 pb-20">
