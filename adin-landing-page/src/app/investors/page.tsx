@@ -212,7 +212,7 @@ export default function InvestorsPage() {
                 {/* Expansive Due Diligence */}
                 <div className="rounded-2xl border border-[#E5E5E5] bg-white p-6 md:p-8 shadow-sm flex flex-col" style={{minHeight: 220}}>
                   <div className="text-base font-semibold text-black mb-1">Expansive due diligence.</div>
-                  <div className="text-sm text-[#222] mb-4">ADIN's agents sweat the details. Technical, business, and beyond and in just 10 minutes.</div>
+                  <div className="text-sm text-[#222] mb-4">ADIN&apos;s agents sweat the details. Technical, business, and beyond and in just 10 minutes.</div>
                   <Image src="/assets/expansive due diligence.svg" alt="Due Diligence" width={400} height={200} style={{width: '100%', height: 200, objectFit: 'contain', borderRadius: 12}} />
                 </div>
               </div>
@@ -299,14 +299,14 @@ export default function InvestorsPage() {
             <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
             <div className="text-xs text-[#888] mb-2 font-medium">AI Investor</div>
               <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>An LLM built for venture-grade signal.</div>
-              <div className="text-sm text-[#222] mb-2" style={{fontFamily: 'Inter', lineHeight: '20px', marginBottom: 30}}>ADIN's AI uncovers patterns in founders, markets, and deal flow helping you invest faster and smarter, grounded in data.</div>
+              <div className="text-sm text-[#222] mb-2" style={{fontFamily: 'Inter', lineHeight: '20px', marginBottom: 30}}>ADIN&apos;s AI uncovers patterns in founders, markets, and deal flow helping you invest faster and smarter, grounded in data.</div>
               <Image src="/assets/ai_investor.png" alt="Deck Feedback" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 0, borderRadius: 16}} />
             </div>
             {/* Cell 2 */}
             <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
             <div className="text-xs text-[#888] mb-2 font-medium">Deal Flow</div>
               <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Tap into the collective edge.</div>
-              <div className="text-sm text-[#222] mb-2" style={{fontFamily: 'Inter', lineHeight: '20px', marginBottom: 30}}>The ADIN Member network surfaces deals from top founders, operators, and scouts you won't find anywhere else.</div>
+              <div className="text-sm text-[#222] mb-2" style={{fontFamily: 'Inter', lineHeight: '20px', marginBottom: 30}}>The ADIN Member network surfaces deals from top founders, operators, and scouts you won&apos;t find anywhere else.</div>
               <Image src="/assets/deal_flow.png" alt="Pitch Practice" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 16, borderRadius: 16}} />
             </div>
           </div>
