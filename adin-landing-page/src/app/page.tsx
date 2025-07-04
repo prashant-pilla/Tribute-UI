@@ -591,7 +591,7 @@ export default function Home() {
             <div style={{ color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 500, lineHeight: '16px', marginBottom: 8 }}>Seed</div>
             <div style={{ color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 22, fontWeight: 600, lineHeight: '28px', marginBottom: 8 }}>Culture-First Capital</div>
             <div style={{ color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 17, fontWeight: 400, lineHeight: '24px' }}>
-              Seed-stage founders shape ADIN's future. Our community brings cultural context and dealflow, helping us invest in projects that align with our collective values.
+              Seed-stage founders shape ADIN&apos;s future. Our community brings cultural context and dealflow, helping us invest in projects that align with our collective values.
             </div>
           </div>
           {/* A Round */}
@@ -603,7 +603,7 @@ export default function Home() {
             <div style={{ color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 500, lineHeight: '16px', marginBottom: 8 }}>A Round</div>
             <div style={{ color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 22, fontWeight: 600, lineHeight: '28px', marginBottom: 8 }}>Early, Not Late</div>
             <div style={{ color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 17, fontWeight: 400, lineHeight: '24px' }}>
-              We don't chase momentum—we help create it. ADIN's A-round capital supports early traction and sharp execution, before the noise of growth-stage hype.
+              We don&apos;t chase momentum—we help create it. ADIN&apos;s A-round capital supports early traction and sharp execution, before the noise of growth-stage hype.
             </div>
           </div>
         </div>
