@@ -194,7 +194,7 @@ export default function FoundersPage() {
             <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
             <div className="text-xs text-[#888] mb-2 font-medium">Deck Feedback</div>
               <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Pitch deck breakdown.</div>
-              <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Receive feedback on your deck's clarity, design, and investor-readiness. ADIN makes sure you're ready for the room.</div>
+              <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Receive feedback on your deck&apos;s clarity, design, and investor-readiness. ADIN makes sure you&apos;re ready for the room.</div>
               <Image src="/assets/Frame 1.svg" alt="Deck Feedback" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 0, borderRadius: 16}} />
             </div>
             {/* Cell 2 */}
@@ -215,7 +215,7 @@ export default function FoundersPage() {
             <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
             <div className="text-xs text-[#888] mb-2 font-medium">From Pitch to Capital</div>
               <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Secure funding.</div>
-              <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Once approved, your startup enters ADIN's deal room. Investors commit, you choose who signs the check.</div>
+              <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Once approved, your startup enters ADIN&apos;s deal room. Investors commit, you choose who signs the check.</div>
               <Image src="/assets/Frame 4.svg" alt="Secure Funding" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 0, borderRadius: 16}} />
             </div>
           </div>
