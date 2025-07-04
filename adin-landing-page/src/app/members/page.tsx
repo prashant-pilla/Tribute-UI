@@ -59,8 +59,8 @@ export default function MembersPage() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white relative overflow-x-hidden">
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-8 pl-20 pt-12 pb-8 relative">
-        <div className="flex-1 max-w-xl">
+      <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-4 md:px-8 md:pl-20 pt-12 pb-8 relative w-full">
+        <div className="flex-1 max-w-xl w-full">
           <span className="border border-[#49C17A] text-[#4D4D4D] font-medium text-base leading-5 font-inter px-3 py-1 rounded-full">
             Members
           </span>
@@ -132,39 +132,26 @@ export default function MembersPage() {
             </span>
           </button>
         </div>
-        <div className="flex-1 flex flex-col items-center -mt-7">
+        <div className="flex-1 flex flex-col items-center -mt-7 w-full max-w-[440px] mx-auto md:mx-0">
           {/* Clickable video hero image with overlay */}
           <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Replace with actual video link
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group block overflow-hidden"
-            style={{
-              width: '439.167px',
-              height: '247.031px',
-              flexShrink: 0,
-              borderRadius: '30px',
-            }}
+            className="relative group block overflow-hidden w-full h-[220px] xs:h-[260px] sm:h-[280px] md:w-[439.167px] md:h-[247.031px] rounded-2xl md:rounded-[30px]"
           >
             <Image
               src="/assets/members hero image.png"
               alt="Members Hero Video Preview"
               fill
-              style={{ objectFit: 'cover', borderRadius: '30px', transform: 'scale(1.1)' }}
+              style={{ objectFit: 'cover', borderRadius: 'inherit', transform: 'scale(1.1)' }}
               className=""
               priority
             />
             {/* Title overlay top left */}
             <div
-              className="absolute top-4 left-4 text-white px-4 py-2 rounded-lg text-lg font-semibold"
-              style={{
-                color: '#FFF',
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '21.958px',
-                fontStyle: 'normal',
-                fontWeight: 500,
-                lineHeight: '26.35px',
-              }}
+              className="absolute top-2 left-2 md:top-4 md:left-4 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg text-base md:text-lg font-semibold"
+              style={{ color: '#FFF', fontFamily: 'Inter, sans-serif', fontWeight: 500, lineHeight: '26.35px' }}
             >
               Meet Adin
             </div>
@@ -173,9 +160,9 @@ export default function MembersPage() {
               <Image
                 src="/assets/Play Button.svg"
                 alt="Play Video"
-                width={64}
-                height={64}
-                className="drop-shadow-lg group-hover:scale-110 transition-transform"
+                width={48}
+                height={48}
+                className="drop-shadow-lg group-hover:scale-110 transition-transform md:w-16 md:h-16"
                 priority
               />
             </div>
@@ -184,9 +171,9 @@ export default function MembersPage() {
           </a>
         </div>
         {/* Down arrow for scroll cue */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 hidden md:block">
             <Image src="/assets/chevron-down.svg" alt="Scroll Down" width={24} height={24} className="animate-bounce opacity-60" />
-          </div>
+        </div>
         {/* Gradient background fixed to viewport bottom, z-0 */}
         <div
           className="absolute bottom-10 left-0 w-full h-40"
@@ -204,202 +191,200 @@ export default function MembersPage() {
       </section>
 
       {/* Content Sections */}
-      <section className="max-w-8xl mx-auto px-8 py-12 pl-0 space-y-4">
+      <section className="w-full max-w-8xl mx-auto px-4 md:px-8 py-12 md:pl-0 space-y-8 md:space-y-4">
         {/* Power Player Section */}
         <div>
-          <h2
-            style={{
-              color: '#000',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 56,
-              fontStyle: 'normal',
-              fontWeight: 600,
-              lineHeight: '64px',
-              marginBottom: 16,
-              marginTop: 100,
-              marginLeft: 90,
-              textAlign: 'left',
-            }}
-          >
-            Become an ADIN Member.<br />Earn <span style={{ color: '#49C17A', fontFamily: 'Inter, sans-serif', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px' }}>5x more</span>.
-          </h2>
-          <p
-            style={{
-              color: '#000',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 22,
-              fontStyle: 'normal',
-              fontWeight: 400,
-              lineHeight: '32px',
-              marginBottom: '24px',
-              marginLeft: 90,
-            }}
-          >
-            Compared to traditional Venture Capital scout programs, ADIN&apos;s<br />payouts reward members for being apart of the network.
-          </p>
-        {/* Deal Calculator Cell */}
-        <div className="max-w-5xl mx-auto rounded-3xl border border-[#E5E0F6] bg-white shadow-sm p-8 mt-4 mb-12" style={{ boxShadow: '0 2px 16px 0 rgba(80, 80, 120, 0.06)' }}>
-          <div className="mb-2">
-            <div className="font-semibold text-gray-900 text-lg">Deal Calculator</div>
-            <div className="text-gray-500 text-sm">Adjust the exit value to see your potential earnings.</div>
-          </div>
-          <div className="text-5xl font-bold text-black mt-6 mb-2">$54,000,000</div>
-          <div className="text-lg text-gray-700 mb-4">Exit Value</div>
-          {/* Custom Slider */}
-          <div className="w-full mb-8 relative" style={{ height: '72px' }}>
-            {/* Progress Bar Container with border */}
-            <div className="absolute left-0 right-0 top-0 h-[44px] rounded-full border border-[#E5E0F6] bg-white z-0" />
-            {/* Progress (first half, purple) */}
-            <div className="absolute left-0 top-0 h-[44px] rounded-l-full border border-[#E5E0F6] bg-[#F3EAFD] z-1" style={{ width: '50%' }} />
-            {/* Progress (second half, white) */}
-            <div className="absolute left-1/2 top-0 h-[44px] rounded-r-full border border-[#E5E0F6] bg-white z-1" style={{ width: '50%' }} />
-            {/* Thumb (centered) */}
-            <div className="absolute left-1/2 top-5.5 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center">
-              <div className="w-12 h-12 bg-[#A97DF5] rounded-full flex items-center justify-center shadow-lg">
-                <Image src="/assets/menu-outline.svg" alt="Scroll Thumb" width={32} height={32} />
+                      <h2
+              className="md:ml-[90px]"
+              style={{
+                color: '#000',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 56,
+                fontStyle: 'normal',
+                fontWeight: 600,
+                lineHeight: '64px',
+                marginBottom: 16,
+                marginTop: 100,
+                textAlign: 'left',
+              }}
+            >
+              Become an ADIN Member.<br className="hidden md:block" />Earn <span style={{ color: '#49C17A', fontFamily: 'Inter, sans-serif', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px' }}>5x more</span>.
+            </h2>
+            <p
+              className="md:ml-[90px]"
+              style={{
+                color: '#000',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 22,
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '32px',
+                marginBottom: '24px',
+              }}
+            >
+              Compared to traditional Venture Capital scout programs, ADIN&apos;s<br className="hidden md:block" />payouts reward members for being apart of the network.
+            </p>
+          {/* Deal Calculator Cell */}
+          <div className="w-full max-w-2xl md:max-w-5xl mx-auto rounded-3xl border border-[#E5E0F6] bg-white shadow-sm p-4 md:p-8 mt-4 mb-8 md:mb-12" style={{ boxShadow: '0 2px 16px 0 rgba(80, 80, 120, 0.06)' }}>
+            <div className="mb-2">
+              <div className="font-semibold text-gray-900 text-lg">Deal Calculator</div>
+              <div className="text-gray-500 text-sm">Adjust the exit value to see your potential earnings.</div>
+            </div>
+            <div className="text-5xl font-bold text-black mt-6 mb-2">$54,000,000</div>
+            <div className="text-lg text-gray-700 mb-4">Exit Value</div>
+            {/* Custom Slider */}
+            <div className="w-full mb-8 relative" style={{ height: '72px' }}>
+              {/* Progress Bar Container with border */}
+              <div className="absolute left-0 right-0 top-0 h-[44px] rounded-full border border-[#E5E0F6] bg-white z-0" />
+              {/* Progress (first half, purple) */}
+              <div className="absolute left-0 top-0 h-[44px] rounded-l-full border border-[#E5E0F6] bg-[#F3EAFD] z-1" style={{ width: '50%' }} />
+              {/* Progress (second half, white) */}
+              <div className="absolute left-1/2 top-0 h-[44px] rounded-r-full border border-[#E5E0F6] bg-white z-1" style={{ width: '50%' }} />
+              {/* Thumb (centered) */}
+              <div className="absolute left-1/2 top-5.5 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#A97DF5] rounded-full flex items-center justify-center shadow-lg">
+                  <Image src="/assets/menu-outline.svg" alt="Scroll Thumb" width={32} height={32} />
+                </div>
+              </div>
+              {/* Labels below bar */}
+              <div className="absolute left-0 right-0 top-[55px] flex justify-between w-full px-1 select-none">
+                <span className="text-xs text-black font-medium">$1M</span>
+                <span className="text-xs text-black font-medium" style={{ transform: 'translateX(-50%)' }}>$50M</span>
+                <span className="text-xs text-black font-medium">$100M</span>
               </div>
             </div>
-            {/* Labels below bar */}
-            <div className="absolute left-0 right-0 top-[55px] flex justify-between w-full px-1 select-none">
-              <span className="text-xs text-black font-medium">$1M</span>
-              <span className="text-xs text-black font-medium" style={{ transform: 'translateX(-50%)' }}>$50M</span>
-              <span className="text-xs text-black font-medium">$100M</span>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-            {/* Industry Standard Card */}
-            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col justify-between min-h-[370px] relative" style={{boxShadow: '0 1px 8px 0 rgba(80, 80, 120, 0.04)', borderRadius: '24px'}}>
-              <div className="mb-2">
-                <span className="inline-block bg-[#F6F6F6] text-[#4D4D4D] px-3 py-1 rounded-full mb-7" style={{fontFamily: 'Inter', fontWeight: 500, fontSize: 16, lineHeight: '20px', fontStyle: 'normal'}}>The Industry Standard</span>
-                <div style={{color: '#000', fontFamily: 'Inter', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px', marginBottom: 8}}>$780,000</div>
-                <div style={{color: '#000', fontFamily: 'Inter', fontSize: 22, fontStyle: 'normal', fontWeight: 400, lineHeight: '32px', marginBottom: 32}}>Standard Earnings</div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center justify-between">
-                    <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
-                      <Image src="/assets/trending-down.svg" alt="Limited Carry Share" width={22} height={22} />
-                      Limited Carry Share
-                    </span>
-                    <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>10% of 20% = 2% Total Profits</span>
-                  </li>
-                  <li className="flex items-center justify-between">
-                    <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
-                      <Image src="/assets/pie-chart.svg" alt="Small Piece" width={22} height={22} />
-                      Small Piece
-                    </span>
-                    <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Minimal Profit Participation</span>
-                  </li>
-                  <li className="flex items-center justify-between">
-                    <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
-                      <Image src="/assets/accessibility.svg" alt="Finder Status" width={22} height={22} />
-                      Finder Status
-                    </span>
-                    <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>You&apos;re a &quot;finder&quot;, not a Partner.</span>
-                  </li>
-                </ul>
-                <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #F3655B', background: 'linear-gradient(0deg, rgba(243, 101, 91, 0.10) 0%, rgba(243, 101, 91, 0.10) 100%), #FFF', padding: '8px 12px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#000', overflow: 'hidden', textOverflow: 'ellipsis'}}>
-                  <Image src="/assets/thumbs-down.svg" alt="Limited Upside Potential" width={14} height={14} />
-                  Limited Upside Potential
-                </span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+              {/* Industry Standard Card */}
+              <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col justify-between min-h-[370px] relative" style={{boxShadow: '0 1px 8px 0 rgba(80, 80, 120, 0.04)', borderRadius: '24px'}}>
+                <div className="mb-2">
+                  <span className="inline-block bg-[#F6F6F6] text-[#4D4D4D] px-3 py-1 rounded-full mb-7" style={{fontFamily: 'Inter', fontWeight: 500, fontSize: 16, lineHeight: '20px', fontStyle: 'normal'}}>The Industry Standard</span>
+                  <div style={{color: '#000', fontFamily: 'Inter', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px', marginBottom: 8}}>$780,000</div>
+                  <div style={{color: '#000', fontFamily: 'Inter', fontSize: 22, fontStyle: 'normal', fontWeight: 400, lineHeight: '32px', marginBottom: 32}}>Standard Earnings</div>
+                  <ul className="space-y-4 mb-8">
+                    <li className="flex items-center justify-between">
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                        <Image src="/assets/trending-down.svg" alt="Limited Carry Share" width={22} height={22} />
+                        Limited Carry Share
+                      </span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>10% of 20% = 2% Total Profits</span>
+                    </li>
+                    <li className="flex items-center justify-between">
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                        <Image src="/assets/pie-chart.svg" alt="Small Piece" width={22} height={22} />
+                        Small Piece
+                      </span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Minimal Profit Participation</span>
+                    </li>
+                    <li className="flex items-center justify-between">
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                        <Image src="/assets/accessibility.svg" alt="Finder Status" width={22} height={22} />
+                        Finder Status
+                      </span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>You&apos;re a &quot;finder&quot;, not a Partner.</span>
+                    </li>
+                  </ul>
+                  <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #F3655B', background: 'linear-gradient(0deg, rgba(243, 101, 91, 0.10) 0%, rgba(243, 101, 91, 0.10) 100%), #FFF', padding: '8px 12px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#000', overflow: 'hidden', textOverflow: 'ellipsis'}}>
+                    <Image src="/assets/thumbs-down.svg" alt="Limited Upside Potential" width={14} height={14} />
+                    Limited Upside Potential
+                  </span>
+                </div>
               </div>
-            </div>
-            {/* ADIN Exclusive Card */}
-            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col justify-between min-h-[370px] relative overflow-hidden" style={{boxShadow: '0 1px 8px 0 rgba(80, 80, 120, 0.04)', borderRadius: '24px'}}>
-              {/* Gradient bar background up to price with smooth fade */}
-              <div style={{
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                width: '100%',
-                height: 130, // adjust as needed to reach just below the price
-                zIndex: 0,
-                background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
-                opacity: 0.85,
-                WebkitMaskImage: 'linear-gradient(to bottom, white 49%, transparent 100%)',
-                maskImage: 'linear-gradient(to bottom, white 49%, transparent 100%)',
-              }} />
-              <div className="mb-2 relative z-10">
-                <span className="inline-block bg-[#F6F6F6] text-[#4D4D4D] px-3 py-1 rounded-full mb-7" style={{fontFamily: 'Inter', fontWeight: 500, fontSize: 16, lineHeight: '20px', fontStyle: 'normal'}}>ADIN Exclusive</span>
-                <div style={{color: '#000', fontFamily: 'Inter', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px', marginBottom: 8}}>$3,900,000</div>
-                <div style={{color: '#000', fontFamily: 'Inter', fontSize: 22, fontStyle: 'normal', fontWeight: 400, lineHeight: '32px', marginBottom: 32}}>Earnings <span style={{fontStyle: 'italic'}}>with</span> ADIN</div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center justify-between">
-                    <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
-                      <Image src="/assets/sparkles.svg" alt="Premium Carry Share" width={22} height={22} />
-                      Premium Carry Share
+              {/* ADIN Exclusive Card */}
+              <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col justify-between min-h-[370px] relative overflow-hidden" style={{boxShadow: '0 1px 8px 0 rgba(80, 80, 120, 0.04)', borderRadius: '24px'}}>
+                {/* Gradient bar background up to price with smooth fade */}
+                <div style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  width: '100%',
+                  height: 130, // adjust as needed to reach just below the price
+                  zIndex: 0,
+                  background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
+                  opacity: 0.85,
+                  WebkitMaskImage: 'linear-gradient(to bottom, white 49%, transparent 100%)',
+                  maskImage: 'linear-gradient(to bottom, white 49%, transparent 100%)',
+                }} />
+                <div className="mb-2 relative z-10">
+                  <span className="inline-block bg-[#F6F6F6] text-[#4D4D4D] px-3 py-1 rounded-full mb-7" style={{fontFamily: 'Inter', fontWeight: 500, fontSize: 16, lineHeight: '20px', fontStyle: 'normal'}}>ADIN Exclusive</span>
+                  <div style={{color: '#000', fontFamily: 'Inter', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px', marginBottom: 8}}>$3,900,000</div>
+                  <div style={{color: '#000', fontFamily: 'Inter', fontSize: 22, fontStyle: 'normal', fontWeight: 400, lineHeight: '32px', marginBottom: 32}}>Earnings <span style={{fontStyle: 'italic'}}>with</span> ADIN</div>
+                  <ul className="space-y-4 mb-8">
+                    <li className="flex items-center justify-between">
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                        <Image src="/assets/sparkles.svg" alt="Premium Carry Share" width={22} height={22} />
+                        Premium Carry Share
+                      </span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>50% of 20% = 10% Total Profits</span>
+                    </li>
+                    <li className="flex items-center justify-between">
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                        <Image src="/assets/heart.svg" alt="True Partnership" width={22} height={22} />
+                        True Partnership
+                      </span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Genuine partner in the upside.</span>
+                    </li>
+                    <li className="flex items-center justify-between">
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                        <Image src="/assets/people.svg" alt="Full Support" width={22} height={22} />
+                        Full Support
+                      </span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Backed by ADIN&apos;s infrastructure.</span>
+                    </li>
+                  </ul>
+                  <div className="flex flex-wrap gap-3 mt-2" style={{width: '100%'}}>
+                    <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222'}}>
+                      <Image src="/assets/checkmark-circle.svg" alt="5x More Upside" width={14} height={14} />
+                      5x More Upside
                     </span>
-                    <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>50% of 20% = 10% Total Profits</span>
-                  </li>
-                  <li className="flex items-center justify-between">
-                    <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
-                      <Image src="/assets/heart.svg" alt="True Partnership" width={22} height={22} />
-                      True Partnership
-                    </span>
-                    <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Genuine partner in the upside.</span>
-                  </li>
-                  <li className="flex items-center justify-between">
-                    <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
-                      <Image src="/assets/people.svg" alt="Full Support" width={22} height={22} />
+                    <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222'}}>
+                      <Image src="/assets/checkmark-circle.svg" alt="Full Support" width={14} height={14} />
                       Full Support
                     </span>
-                    <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Backed by ADIN&apos;s infrastructure.</span>
-                  </li>
-                </ul>
-                <div className="flex flex-nowrap gap-3 mt-2 overflow-x-auto" style={{width: '100%'}}>
-                  <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222', whiteSpace: 'nowrap'}}>
-                    <Image src="/assets/checkmark-circle.svg" alt="5x More Upside" width={14} height={14} />
-                    5x More Upside
-                  </span>
-                  <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222', whiteSpace: 'nowrap'}}>
-                    <Image src="/assets/checkmark-circle.svg" alt="Full Support" width={14} height={14} />
-                    Full Support
-                  </span>
-                  <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222', whiteSpace: 'nowrap'}}>
-                    <Image src="/assets/checkmark-circle.svg" alt="Shared Success" width={14} height={14} />
-                    Shared Success
-                  </span>
+                    <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222'}}>
+                      <Image src="/assets/checkmark-circle.svg" alt="Shared Success" width={14} height={14} />
+                      Shared Success
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        </div>
 
-        
         {/* Power Player Section */}
         <div>
-        <h2
-            style={{
-              color: '#000',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 56,
-              fontStyle: 'normal',
-              fontWeight: 600,
-              lineHeight: '64px',
-              marginBottom: 16,
-              marginTop: 100,
-              marginLeft: 90,
-              textAlign: 'left',
-            }}
-          >
-            Be more than a <span style={{ color: '#49C17A', fontFamily: 'Inter, sans-serif', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px' }}>Member</span>.<br/>Be a deal maker. 
-          </h2>
-          <p
-            style={{
-              color: '#000',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 22,
-              fontStyle: 'normal',
-              fontWeight: 400,
-              lineHeight: '32px',
-              marginBottom: '24px',
-              marginLeft: 90,
-            }}
-          >
-            Get rewarded for the deals you bring, with 10% carry and access to a private network.
-          </p>
+                      <h2
+              className="md:ml-[90px]"
+              style={{
+                color: '#000',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 56,
+                fontStyle: 'normal',
+                fontWeight: 600,
+                lineHeight: '64px',
+                marginBottom: 16,
+                marginTop: 100,
+                textAlign: 'left',
+              }}
+            >
+              Be more than a <span style={{ color: '#49C17A', fontFamily: 'Inter, sans-serif', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px' }}>Member</span>.<br className="hidden md:block" />Be a deal maker. 
+            </h2>
+            <p
+              className="md:ml-[90px]"
+              style={{
+                color: '#000',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 22,
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '32px',
+                marginBottom: '24px',
+              }}
+            >
+              Get rewarded for the deals you bring, with 10% carry and access to a private network.
+            </p>
           
-        
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-0 ml-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 mb-0 md:ml-20">
             {/* Earn 10% Carry Cell */}
             <div className="rounded-3xl border border-[#E5E5E5] bg-white p-10 flex flex-col h-full" style={{minHeight: 340, boxShadow: '0 1px 8px 0 rgba(80, 80, 120, 0.04)'}}>
               <div className="mb-6">
@@ -442,15 +427,15 @@ export default function MembersPage() {
         </div>
 
         {/* Exclusive Access Cell */}
-        <div className="rounded-3xl border border-[#E5E5E5] bg-white flex flex-col md:flex-row items-center px-10 py-5 overflow-hidden mt-0 mb-4 ml-20" style={{boxShadow: '0 1px 8px 0 rgba(80, 80, 120, 0.04)', maxWidth: 'calc(100% - 5rem)'}}>
+        <div className="rounded-3xl border border-[#E5E5E5] bg-white flex flex-col md:flex-row items-center px-4 md:px-10 py-5 overflow-hidden mt-4 mb-4 md:ml-20 w-full md:max-w-[calc(100%-5rem)]" style={{boxShadow: '0 1px 8px 0 rgba(80, 80, 120, 0.04)'}}>
           {/* Image Side */}
-          <div className="flex-1 flex items-center justify-center min-w-[320px] min-h-[260px]" style={{borderTopLeftRadius: '32px', borderBottomLeftRadius: '32px', borderTopRightRadius: '32px', borderBottomRightRadius: '32px', maxWidth: 520}}>
+          <div className="flex-1 flex items-center justify-center min-w-0 md:min-w-[320px] min-h-[200px] md:min-h-[260px] w-full" style={{borderTopLeftRadius: '32px', borderBottomLeftRadius: '32px', borderTopRightRadius: '32px', borderBottomRightRadius: '32px', maxWidth: 520}}>
             <div style={{width: '100%', maxWidth: 500, padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <Image src="/assets/Exclusive Access Image.png" alt="Exclusive Access" width={480} height={300} style={{width: '100%', height: 'auto', objectFit: 'contain', borderRadius: '24px'}} />
             </div>
           </div>
           {/* Text Side */}
-          <div className="flex-1 flex flex-col justify-center p-0 md:pl-10 md:pr-0" style={{minWidth: 320, height: '100%'}}>
+          <div className="flex-1 flex flex-col justify-center p-4 md:p-0 md:pl-10 md:pr-0 w-full" style={{minWidth: 0, height: '100%'}}>
             <div className="text-base text-black font-normal mb-2" style={{fontFamily: 'Inter', fontSize: 20}}>Exclusive Access</div>
             <div className="text-3xl md:text-4xl font-bold text-black mb-2" style={{fontFamily: 'Inter', lineHeight: '38px', fontSize: 34}}>
               Get access to exclusive events.
@@ -462,7 +447,7 @@ export default function MembersPage() {
         </div>
 
         {/* How to earn your 10% carry section */}
-        <div className="flex flex-col md:flex-row items-start justify-between bg-white px-10 py-12 ml-20 mb-0 mt-16" style={{maxWidth: 'calc(100% - 5rem)'}}>
+        <div className="flex flex-col md:flex-row items-start justify-between bg-white px-4 md:px-10 py-12 md:ml-20 mb-0 mt-16 w-full md:max-w-[calc(100%-5rem)]">
           {/* Left: Text */}
           <div className="flex-1 min-w-[320px] max-w-[520px]">
             <h2 style={{fontFamily: 'Inter', fontWeight: 700, fontSize: 40, lineHeight: '48px', color: '#000', marginBottom: 8}}>How to earn<br/>your 10% carry.</h2>
@@ -529,7 +514,7 @@ export default function MembersPage() {
         </div>
 
         {/* FAQ (copied from home page) */}
-        <section className="max-w-5xl mx-auto mt-24 mb-24 px-0">
+        <section className="max-w-5xl mx-auto mt-24 mb-24 px-4">
           <h2
             style={{
               alignSelf: 'stretch',
@@ -587,9 +572,9 @@ export default function MembersPage() {
           <div className="divide-y divide-[#E5E5E5]">
             {questions[faqCategory as FaqCategory].map((item: FaqItem, idx: number) => (
               <details key={item.q} className="group" {...(faqCategory === 'General' && idx === 0 ? { open: true } : {})}>
-                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition">
+                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition text-left list-none">
                   {item.q}
-                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180">
+                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180 flex-shrink-0">
                     <path d="M8 10l4 4 4-4" stroke="#A97DF5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </summary>
@@ -603,7 +588,7 @@ export default function MembersPage() {
           </div>
         </section>
         {/* CTA - Invest with ADIN */}
-        <div className="flex flex-col items-center justify-center pt-0 pb-20">
+        <div className="flex flex-col items-center justify-center pt-0 pb-20 px-4">
           <h2
             style={{
               color: '#000',
@@ -624,23 +609,20 @@ export default function MembersPage() {
           >
             Submit Deals. Earn 10%.
           </h2>
-          <div className="flex flex-col items-center w-full">
+          <div className="flex flex-col items-center">
             <div
               className="flex items-center border rounded-[32px]"
               style={{
                 border: '1px solid #F3EAFD',
                 background: '#FFF',
-                padding: '4px 4px 4px 24px',
-                alignItems: 'center',
-                gap: 16,
+                padding: '4px 4px 4px 16px',
                 marginBottom: 10,
               }}
-            >
+              >
               <span
+                className="text-[12px] sm:text-[16px] font-medium"
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: 16,
-                  fontStyle: 'normal',
                   fontWeight: 500,
                   lineHeight: '20px',
                   background: 'radial-gradient(62.52% 11.58% at 50% 50%, #A97DF5 0%, #B19AD9 100%)',
@@ -654,19 +636,16 @@ export default function MembersPage() {
                 Early access for Tribute Labs Members
               </span>
               <button
-                className="flex items-center justify-center"
+                className="flex items-center justify-center text-[14px] sm:text-[16px] px-3 py-1 sm:px-6 sm:py-3"
                 style={{
                   borderRadius: 80,
                   background: '#A97DF5',
                   color: '#FFF',
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: 16,
-                  fontStyle: 'normal',
                   fontWeight: 500,
                   lineHeight: '20px',
-                  padding: '14px 24px',
                   gap: 4,
-                  marginLeft: 16,
+                  marginLeft: 8,
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'background 0.2s',
@@ -680,20 +659,13 @@ export default function MembersPage() {
               </button>
             </div>
             <div
-              style={{
-                marginTop: 10,
-                color: '#A97DF5',
-                fontFamily: 'Inter, sans-serif',
-                fontSize: 16,
-                fontStyle: 'normal',
-                fontWeight: 500,
-                lineHeight: '20px',
-                textAlign: 'center',
-              }}
+              className="mt-2 text-[12px] sm:text-[16px] text-center font-medium"
+              style={{ color: '#A97DF5', fontFamily: 'Inter, sans-serif', lineHeight: '20px' }}
             >
               <span style={{ color: '#888' }}>Not a Tribute Labs Member? </span>
               <a
                 href="#"
+                className="text-[12px] sm:text-[16px]"
                 style={{ color: '#A97DF5', textDecoration: 'none', marginLeft: 4 }}
                 onMouseOver={e => (e.currentTarget.style.color = '#7B61FF')}
                 onMouseOut={e => (e.currentTarget.style.color = '#A97DF5')}

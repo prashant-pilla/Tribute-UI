@@ -59,102 +59,65 @@ export default function InvestorsPage() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white relative overflow-x-hidden">
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-8 pl-20 pt-12 pb-8 relative">
-        <div className="flex-1 max-w-xl">
+      <section className="flex flex-col sm:flex-row items-center justify-between gap-8 px-4 sm:px-8 sm:pl-20 pt-8 sm:pt-12 pb-8 relative">
+        <div className="flex-1 max-w-xl z-10">
           <span className="text-[#4D4D4D] font-medium text-base leading-5 font-inter border border-[#FFBF66] px-3 py-1 rounded-full">
             Investors
           </span>
           <h1
+            className="text-[32px] sm:text-[56px] leading-tight sm:leading-[64px] font-semibold mt-6 mb-6 text-black"
             style={{
-              color: '#000',
               fontFamily: 'Inter, sans-serif',
-              fontSize: 56,
-              fontStyle: 'normal',
-              fontWeight: 600,
-              lineHeight: '64px',
-              marginBottom: '24px',
-              marginTop: '32px',
             }}
           >
             AI Will be the<br />Best Investor.
           </h1>
           <p
-            style={{
-              maxWidth: 637,
-              color: '#000',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 22,
-              fontStyle: 'normal',
-              fontWeight: 400,
-              lineHeight: '32px',
-              marginBottom: '32px',
-            }}
+            className="text-[16px] sm:text-[22px] leading-[24px] sm:leading-[32px] text-black mb-6 sm:mb-8"
+            style={{ fontFamily: 'Inter, sans-serif', maxWidth: 637 }}
           >
             ADIN and its agents automate venture, from diligence to making investment decisions, with deals sourced by investors and the ADIN member network.
           </p>
           <button
-            style={{
-              display: 'flex',
-              padding: '16px 24px',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: 8,
-              borderRadius: 80,
-              border: '1px solid #FFBF66',
-              background: '#000',
-              cursor: 'pointer',
-              marginBottom: 100,
-            }}
+            className="flex items-center justify-center gap-2 sm:gap-4 px-4 sm:px-6 py-2 sm:py-4 rounded-full border border-[#FFBF66] bg-black mb-10 sm:mb-[100px]"
+            style={{ borderRadius: 80, fontFamily: 'Inter, sans-serif', border: '1px solid #FFBF66' }}
           >
             <span
-              style={{
-                color: '#FFF',
-                fontFamily: 'Inter, sans-serif',
-                fontSize: 16,
-                fontStyle: 'normal',
-                fontWeight: 500,
-                lineHeight: '24px',
-              }}
+              className="text-white text-[14px] sm:text-[16px] font-medium"
+              style={{ fontFamily: 'Inter, sans-serif', lineHeight: '24px' }}
             >
               Apply Now
             </span>
             <span
-              style={{
-                color: '#FFBF66',
-                fontFamily: 'Inter, sans-serif',
-                fontSize: 16,
-                fontStyle: 'normal',
-                fontWeight: 500,
-                lineHeight: '24px',
-              }}
+              className="text-[#FFBF66] text-[14px] sm:text-[16px] font-medium"
+              style={{ fontFamily: 'Inter, sans-serif', lineHeight: '24px' }}
             >
               →
             </span>
           </button>
         </div>
-        <div className="flex-1 flex flex-col items-center">
+        <div className="flex-1 flex flex-col items-center w-full z-10">
           {/* Card and voting mockup replaced with static image */}
-          <div className="relative">
+          <div className="relative w-full max-w-xs sm:max-w-md">
             <Image
               src="/assets/lane-ai-vote.png"
               alt="Lane AI Voting Card"
               width={420}
               height={400}
-              className="rounded-2xl"
+              className="rounded-2xl w-full h-auto"
               priority
             />
           </div>
         </div>
         {/* Down arrow for scroll cue */}
-        <div className="absolute bottom-11 left-1/2 -translate-x-1/2 z-10">
+        <div className="absolute bottom-11 left-1/2 -translate-x-1/2 z-10 hidden sm:block">
             <Image src="/assets/chevron-down.svg" alt="Scroll Down" width={24} height={24} className="animate-bounce opacity-60" />
           </div>
         {/* Gradient background fixed to viewport bottom, z-0 */}
         <div
-          className="absolute bottom-0 left-0 w-full h-40"
+          className="absolute bottom-0 left-0 w-full h-40 z-0"
           style={{
             bottom: '-45px',
-            zIndex: 0,
             background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
             opacity: 0.85,
             WebkitMaskImage:
@@ -166,7 +129,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* Content Sections */}
-      <section className="max-w-8xl mx-auto px-8 py-12 pl-0 space-y-16">
+      <section className="max-w-8xl mx-auto px-4 sm:px-8 py-8 sm:py-12 space-y-8 sm:space-y-16">
         {/* Power Player Section */}
         <div>
           <h2
@@ -199,7 +162,7 @@ export default function InvestorsPage() {
           </p>
 
           {/* Asymmetrical Cluster of Cells - Two Columns, One Full-Width Row */}
-          <div className="w-full flex flex-col gap-4 mb-8 mt-8 max-w-5xl mx-auto px-4">
+          <div className="w-full flex flex-col gap-4 mb-8 mt-8 max-w-5xl mx-auto">
             <div className="flex flex-col md:flex-row gap-4">
               {/* Left Column */}
               <div className="flex flex-col gap-6 flex-1 min-w-0">
@@ -228,7 +191,7 @@ export default function InvestorsPage() {
                 <div className="rounded-2xl border border-[#E5E5E5] bg-white p-6 md:p-8 shadow-sm flex flex-col" style={{minHeight: 220, padding: 0}}>
                   <div className="text-base font-semibold text-black mb-1 ml-7 mt-7" style={{padding: '10 10 10 10'}}>Deals hit your inbox.</div>
                   <div className="text-sm text-[#222] mb-4 ml-7" style={{padding: '0 0 0 0'}}>Stay in the loop with real-time deal alerts, term sheets, and wins.</div>
-                  <Image src="/assets/deals hit your inbox.svg" alt="Deals Inbox" width={400} height={220} style={{width: '100%', height: 420, objectFit: 'cover', borderRadius: '0 0 16px 16px', display: 'block'}} />
+                  <Image src="/assets/deals hit your inbox.svg" alt="Deals Inbox" width={400} height={220} style={{width: '100%', height: 420, objectFit: 'cover', objectPosition: '100% center', borderRadius: '0 0 16px 16px', display: 'block'}} />
                 </div>
               </div>
 
@@ -315,7 +278,7 @@ export default function InvestorsPage() {
 
 
         {/* FAQ (copied from home page) */}
-        <section className="max-w-5xl mx-auto mt-24 mb-24 px-0">
+        <section className="max-w-5xl mx-auto mt-24 mb-24 px-4">
           <h2
             style={{
               alignSelf: 'stretch',
@@ -373,9 +336,9 @@ export default function InvestorsPage() {
           <div className="divide-y divide-[#E5E5E5]">
             {questions[faqCategory as FaqCategory].map((item: FaqItem, idx: number) => (
               <details key={item.q} className="group" {...(faqCategory === 'General' && idx === 0 ? { open: true } : {})}>
-                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition">
+                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition text-left list-none">
                   {item.q}
-                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180">
+                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180 flex-shrink-0">
                     <path d="M8 10l4 4 4-4" stroke="#A97DF5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </summary>
@@ -389,7 +352,7 @@ export default function InvestorsPage() {
           </div>
         </section>
         {/* CTA - Invest with ADIN */}
-        <div className="flex flex-col items-center justify-center pt-0 pb-20">
+        <div className="flex flex-col items-center justify-center pt-0 pb-20 px-4">
           <h2
             style={{
               color: '#000',
@@ -410,23 +373,20 @@ export default function InvestorsPage() {
           >
             Ready to shape the future of investing?
           </h2>
-          <div className="flex flex-col items-center w-full">
+          <div className="flex flex-col items-center">
             <div
               className="flex items-center border rounded-[32px]"
               style={{
                 border: '1px solid #F3EAFD',
                 background: '#FFF',
-                padding: '4px 4px 4px 24px',
-                alignItems: 'center',
-                gap: 16,
+                padding: '4px 4px 4px 16px',
                 marginBottom: 10,
               }}
-            >
+              >
               <span
+                className="text-[12px] sm:text-[16px] font-medium"
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: 16,
-                  fontStyle: 'normal',
                   fontWeight: 500,
                   lineHeight: '20px',
                   background: 'radial-gradient(62.52% 11.58% at 50% 50%, #A97DF5 0%, #B19AD9 100%)',
@@ -440,19 +400,16 @@ export default function InvestorsPage() {
                 Early access for Tribute Labs Members
               </span>
               <button
-                className="flex items-center justify-center"
+                className="flex items-center justify-center text-[14px] sm:text-[16px] px-3 py-1 sm:px-6 sm:py-3"
                 style={{
                   borderRadius: 80,
                   background: '#A97DF5',
                   color: '#FFF',
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: 16,
-                  fontStyle: 'normal',
                   fontWeight: 500,
                   lineHeight: '20px',
-                  padding: '14px 24px',
                   gap: 4,
-                  marginLeft: 16,
+                  marginLeft: 8,
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'background 0.2s',
@@ -466,20 +423,13 @@ export default function InvestorsPage() {
               </button>
             </div>
             <div
-              style={{
-                marginTop: 10,
-                color: '#A97DF5',
-                fontFamily: 'Inter, sans-serif',
-                fontSize: 16,
-                fontStyle: 'normal',
-                fontWeight: 500,
-                lineHeight: '20px',
-                textAlign: 'center',
-              }}
+              className="mt-2 text-[12px] sm:text-[16px] text-center font-medium"
+              style={{ color: '#A97DF5', fontFamily: 'Inter, sans-serif', lineHeight: '20px' }}
             >
               <span style={{ color: '#888' }}>Not a Tribute Labs Member? </span>
               <a
                 href="#"
+                className="text-[12px] sm:text-[16px]"
                 style={{ color: '#A97DF5', textDecoration: 'none', marginLeft: 4 }}
                 onMouseOver={e => (e.currentTarget.style.color = '#7B61FF')}
                 onMouseOut={e => (e.currentTarget.style.color = '#A97DF5')}
@@ -490,19 +440,18 @@ export default function InvestorsPage() {
           </div>
         </div>
       </section>
-      {/* Bottom Gradient Bar above Footer */}
       <div
-          className="absolute bottom-0 left-0 w-full h-40"
-          style={{
-            zIndex: 0,
-            background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
-            opacity: 0.85,
-            WebkitMaskImage:
-              'linear-gradient(to bottom, transparent 0%, white 49%, white 51%, transparent 100%)',
-            maskImage:
-              'linear-gradient(to bottom, transparent 0%, white 100%, white 51%, transparent 100%)',
-          }}
-        />
+        className="absolute bottom-0 left-0 w-full h-40"
+        style={{
+          zIndex: 0,
+          background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
+          opacity: 0.85,
+          WebkitMaskImage:
+            'linear-gradient(to bottom, transparent 0%, white 49%, white 51%, transparent 100%)',
+          maskImage:
+            'linear-gradient(to bottom, transparent 0%, white 100%, white 51%, transparent 100%)',
+        }}
+      />
     </div>
   );
 }
