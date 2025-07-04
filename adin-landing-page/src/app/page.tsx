@@ -1,7 +1,6 @@
 'use client';
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { FaRegChartBar, FaChevronDown } from "react-icons/fa";
 
 const keywords = [
   "3D printing",
@@ -275,7 +274,7 @@ export default function Home() {
                 <span className="font-medium text-gray-900 text-xs">Live Reports</span>
               </div>
               <div className="flex flex-col gap-1">
-                {liveReports.map((report, idx) => (
+                {liveReports.map((report) => (
                   <a
                     key={report.title}
                     href={report.href}
@@ -423,7 +422,7 @@ export default function Home() {
             <div className="text-3xl font-bold text-black leading-tight">AI Agents</div>
           </div>
           <div className="flex flex-col gap-4">
-            {aiAgents.map((agent, idx) => (
+            {aiAgents.map((agent) => (
               <div key={agent.name} className="flex items-center gap-4 py-2 border-b last:border-b-0 border-[#F0F0F0]">
                 <Image src={agent.icon} alt={agent.name} width={40} height={40} className="rounded-lg" />
                 <div>
