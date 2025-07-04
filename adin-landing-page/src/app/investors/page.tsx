@@ -129,7 +129,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* Content Sections */}
-      <section className="max-w-8xl mx-auto px-4 sm:px-8 py-8 sm:py-12 pl-0 space-y-8 sm:space-y-16">
+      <section className="max-w-8xl mx-auto px-4 sm:px-8 py-8 sm:py-12 space-y-8 sm:space-y-16">
         {/* Power Player Section */}
         <div>
           <h2
@@ -162,7 +162,7 @@ export default function InvestorsPage() {
           </p>
 
           {/* Asymmetrical Cluster of Cells - Two Columns, One Full-Width Row */}
-          <div className="w-full flex flex-col gap-4 mb-8 mt-8 max-w-5xl mx-auto px-4">
+          <div className="w-full flex flex-col gap-4 mb-8 mt-8 max-w-5xl mx-auto">
             <div className="flex flex-col md:flex-row gap-4">
               {/* Left Column */}
               <div className="flex flex-col gap-6 flex-1 min-w-0">
@@ -278,7 +278,7 @@ export default function InvestorsPage() {
 
 
         {/* FAQ (copied from home page) */}
-        <section className="max-w-5xl mx-auto mt-24 mb-24 px-0">
+        <section className="max-w-5xl mx-auto mt-24 mb-24 px-4">
           <h2
             style={{
               alignSelf: 'stretch',
@@ -336,9 +336,9 @@ export default function InvestorsPage() {
           <div className="divide-y divide-[#E5E5E5]">
             {questions[faqCategory as FaqCategory].map((item: FaqItem, idx: number) => (
               <details key={item.q} className="group" {...(faqCategory === 'General' && idx === 0 ? { open: true } : {})}>
-                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition">
+                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition text-left list-none">
                   {item.q}
-                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180">
+                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180 flex-shrink-0">
                     <path d="M8 10l4 4 4-4" stroke="#A97DF5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </summary>
@@ -352,7 +352,7 @@ export default function InvestorsPage() {
           </div>
         </section>
         {/* CTA - Invest with ADIN */}
-        <div className="flex flex-col items-center justify-center pt-0 pb-20">
+        <div className="flex flex-col items-center justify-center pt-0 pb-20 px-4">
           <h2
             style={{
               color: '#000',
@@ -373,13 +373,13 @@ export default function InvestorsPage() {
           >
             Ready to shape the future of investing?
           </h2>
-          <div className="flex flex-col items-center w-full">
+          <div className="flex flex-col items-center">
             <div
-              className="flex flex-row flex-nowrap items-center border rounded-[32px] gap-1 sm:gap-4"
+              className="flex items-center border rounded-[32px]"
               style={{
                 border: '1px solid #F3EAFD',
                 background: '#FFF',
-                padding: '4px 4px 4px 24px',
+                padding: '4px 4px 4px 16px',
                 marginBottom: 10,
               }}
             >

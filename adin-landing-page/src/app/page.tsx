@@ -179,9 +179,9 @@ function FaqSection() {
       <div className="divide-y divide-[#E5E5E5]">
         {questions[faqCategory as FaqCategory].map((item: FaqItem, idx: number) => (
           <details key={item.q} className="group" {...(faqCategory === 'General' && idx === 0 ? { open: true } : {})}>
-            <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition">
+            <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-lg text-black transition text-left list-none">
               {item.q}
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="ml-2 transition-transform duration-200 group-open:rotate-180 flex-shrink-0">
                 <path d="M8 10l4 4 4-4" stroke="#A97DF5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </summary>
@@ -699,7 +699,7 @@ export default function Home() {
           </div>
         </div>
         {/* FAQ */}
-        <section className="max-w-5xl mx-auto mt-24 mb-24 px-0">
+        <section className="max-w-5xl mx-auto mt-24 mb-24 px-4">
         <h2
           className="font-semibold text-left mb-4 mt-[100px]"
           style={{
@@ -740,7 +740,7 @@ export default function Home() {
          <FaqSection />
         </section>
         {/* CTA - Invest with ADIN */}
-        <div className="flex flex-col items-center justify-center pt-0 pb-20">
+        <div className="flex flex-col items-center justify-center pt-0 pb-20 px-4">
           <h2
             style={{
               color: '#000',
@@ -761,13 +761,13 @@ export default function Home() {
           >
             Invest with ADIN.
           </h2>
-          <div className="flex flex-col items-center w-full">
+          <div className="flex flex-col items-center">
             <div
-              className="flex flex-row flex-nowrap items-center border rounded-[32px] gap-1 sm:gap-4"
+              className="flex items-center border rounded-[32px]"
               style={{
                 border: '1px solid #F3EAFD',
                 background: '#FFF',
-                padding: '4px 4px 4px 24px',
+                padding: '4px 4px 4px 16px',
                 marginBottom: 10,
               }}
             >

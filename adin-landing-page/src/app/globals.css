@@ -37,3 +37,19 @@ body {
 html {
   overflow-x: hidden;
 }
+
+/* Hide default browser arrow for summary elements */
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Ensure consistent mobile padding */
+@media (max-width: 768px) {
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
