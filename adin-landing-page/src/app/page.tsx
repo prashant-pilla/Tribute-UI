@@ -206,6 +206,10 @@ export default function Home() {
   const [humanIndex, setHumanIndex] = useState(0);
   const humanIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Carousel refs for centering
+  const carouselContainerRef = useRef<HTMLDivElement | null>(null);
+  const keywordRefs = useRef<HTMLElement[]>([]);
+
   // Carousel logic: scrolls, pauses at center, then continues
   useEffect(() => {
     if (isPaused) return;
@@ -253,6 +257,19 @@ export default function Home() {
     };
   }, [humanIndex, humans.length]);
 
+  // Center the highlighted keyword horizontally without vertical scroll
+  useEffect(() => {
+    const container = carouselContainerRef.current;
+    const centerKeyword = keywordRefs.current[2];
+    if (container && centerKeyword) {
+      const containerRect = container.getBoundingClientRect();
+      const keywordRect = centerKeyword.getBoundingClientRect();
+      const containerScrollLeft = container.scrollLeft;
+      const offset = (keywordRect.left + keywordRect.right) / 2 - (containerRect.left + containerRect.right) / 2;
+      container.scrollTo({ left: containerScrollLeft + offset, behavior: 'smooth' });
+    }
+  }, [carouselIndex]);
+
   // Helper to get visible keywords for the carousel
   const getVisibleKeywords = () => {
     const visible = [];
@@ -263,10 +280,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-white relative overflow-x-hidden">
+    <div className="min-h-screen flex flex-col font-sans bg-white relative overflow-x-hidden w-full max-w-full">
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center relative pt-8 pb-16 min-h-[60vh]">
-        <div className="relative z-10 w-full flex flex-col items-center">
+      <section className="w-full max-w-full flex flex-col items-center justify-center relative pt-8 pb-16 min-h-[60vh] px-2 sm:px-0 overflow-x-hidden overflow-y-hidden">
+        <div className="relative z-10 w-full max-w-full flex flex-col items-center">
           <h1
             className="font-semibold text-center mb-1"
             style={{
@@ -277,11 +294,12 @@ export default function Home() {
               lineHeight: '64px',
             }}
           >
-            Investing in early<br />stage ideas building for
+            <span className="hidden sm:inline">Investing in early<br />stage ideas building for</span>
+            <span className="sm:hidden">Investing in early stage ideas building for</span>
           </h1>
           {/* Carousel of keywords */}
-          <div className="w-full px-0 flex justify-center mb-1 h-[72px] select-none overflow-x-auto hide-scrollbar">
-            <div className="flex items-center gap-8 min-w-full">
+          <div ref={carouselContainerRef} className="w-screen -mx-4 px-4 flex justify-center mb-1 h-[72px] select-none overflow-x-auto hide-scrollbar">
+            <div className="flex items-center gap-8 min-w-0 w-full max-w-full">
               {getVisibleKeywords().map((word, idx) => {
                 const isCenter = idx === 2;
                 const colorIdx = (keywords.indexOf(word)) % 3;
@@ -294,7 +312,8 @@ export default function Home() {
                 return (
                   <span
                     key={word}
-                    className="font-semibold whitespace-nowrap px-4 text-center"
+                    ref={el => { if (el) keywordRefs.current[idx] = el; }}
+                    className="font-semibold whitespace-nowrap px-4 text-center min-w-[8rem] flex-shrink-0"
                     style={{
                       color: color,
                       fontFamily: 'Inter, sans-serif',
@@ -328,24 +347,21 @@ export default function Home() {
           </p>
           <div className="w-full flex justify-center mb-2">
             <button
-              className="flex items-center group transition-colors"
+              className="flex items-center group transition-colors px-4 py-4 gap-4 sm:px-2 sm:py-1 sm:gap-2"
               style={{
                 borderRadius: 12,
                 background: '#FCF0D1',
-                padding: '4px 16px 4px 4px',
-                alignItems: 'center',
-                gap: 16,
                 height: 48,
                 minWidth: 180,
                 maxWidth: 227,
               }}
             >
-              <Image src="/assets/Video Section.png" alt="Watch the Video" width={64} height={40} style={{ borderRadius: 8 }} />
+              <Image src="/assets/Video Section.png" alt="Watch the Video" width={64} height={40} className="hidden sm:block" style={{ borderRadius: 8 }} />
+              <Image src="/assets/Video Section.png" alt="Watch the Video" width={56} height={34} className="sm:hidden" style={{ borderRadius: 8 }} />
               <span
-                className="transition-colors text-black group-hover:text-[#7B61FF]"
+                className="transition-colors text-black group-hover:text-[#7B61FF] font-medium text-[16px] sm:text-[14px]"
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: 16,
                   fontWeight: 500,
                   lineHeight: '20px',
                 }}
@@ -355,8 +371,8 @@ export default function Home() {
             </button>
           </div>
           {/* Live Reports Section - heading left-aligned above cards */}
-          <div className="w-full flex justify-center lg:justify-end mt-1 lg:pr-8" style={{ marginTop: '-20px' }}>
-            <div className="w-full max-w-[220px] flex flex-col gap-1">
+          <div className="w-full flex justify-center sm:justify-end lg:justify-end mt-4 sm:mt-[-20px] lg:pr-8">
+            <div className="w-full max-w-xs sm:max-w-[220px] flex flex-col gap-1">
               <div className="flex items-center gap-1 mb-1">
                 <span className="inline-block w-1 h-1 bg-green-500 rounded-full"></span>
                 <span className="font-medium text-gray-900 text-xs">Live Reports</span>
@@ -385,19 +401,19 @@ export default function Home() {
                   </a>
                 ))}
               </div>
-              <a href="#" className="block text-right text-[11px] font-medium mt-1 text-white hover:underline transition-colors" style={{textDecorationThickness: '2px'}}>
+              <a href="#" className="block text-right text-[11px] font-medium mt-1 text-white hover:text-[#7B61FF] hover:underline transition-colors" style={{textDecorationThickness: '2px'}}>
                 View <span className="font-semibold">All Recent Reports</span> →
               </a>
             </div>
           </div>
           {/* Down arrow for scroll cue */}
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 hidden sm:block">
             <Image src="/assets/chevron-down.svg" alt="Scroll Down" width={24} height={24} className="animate-bounce opacity-60" />
           </div>
         </div>
         {/* Gradient background absolute to hero section bottom, z-0 */}
         <div
-          className="absolute bottom-0 left-0 w-full h-40"
+          className="absolute bottom-0 left-0 w-full max-w-full h-40"
           style={{
             bottom: '-10px',
             zIndex: 0,
@@ -464,23 +480,21 @@ export default function Home() {
       <section className="max-w-4xl mx-auto px-4 py-12 space-y-16">
         {/* AI speed. Human judgment. */}
         <h2
+          className="font-semibold text-left mb-4 mt-[100px]"
           style={{
-            alignSelf: 'stretch',
             color: '#000',
             fontFamily: 'Inter, sans-serif',
             fontSize: 54,
             fontWeight: 600,
             lineHeight: '64px',
-            marginBottom: 10,
             maxWidth: 1100,
             width: '100%',
-            marginTop: 100,
             marginRight: 'auto',
             marginLeft: 'auto',
-            textAlign: 'left',
           }}
         >
-          AI speed.<br />Human judgment.
+          <span className="hidden sm:inline">AI speed.<br />Human judgment.</span>
+          <span className="sm:hidden">AI speed. Human judgment.</span>
         </h2>
         <p
           style={{
@@ -504,7 +518,7 @@ export default function Home() {
         {/* AI Agents & Humans Section */}
       <section className="w-full flex flex-col md:flex-row gap-8 justify-center items-stretch max-w-5xl mx-auto mb-7 mt-7">
         {/* AI Agents Card */}
-        <div className="flex-1 bg-white rounded-2xl border border-[#E5E5E5] p-6 flex flex-col min-w-[320px] max-w-xl shadow-sm">
+        <div className="flex-1 bg-white rounded-2xl border border-[#E5E5E5] p-6 flex flex-col min-w-0 sm:min-w-[320px] max-w-full sm:max-w-xl shadow-sm">
           <div className="mb-4">
             <div className="text-lg font-semibold text-gray-900">Powered by</div>
             <div className="text-3xl font-bold text-black leading-tight">AI Agents</div>
@@ -522,7 +536,7 @@ export default function Home() {
           </div>
         </div>
         {/* Humans Carousel Card */}
-        <div className="flex-1 bg-white rounded-2xl border border-[#E5E5E5] p-6 flex flex-col min-w-[320px] max-w-xl shadow-sm items-center">
+        <div className="flex-1 bg-white rounded-2xl border border-[#E5E5E5] p-6 flex flex-col min-w-0 sm:min-w-[320px] max-w-full sm:max-w-xl shadow-sm items-center">
           <div className="mb-4 w-full">
             <div className="text-lg font-semibold text-gray-900">Supported by</div>
             <div className="text-3xl font-bold text-black leading-tight">Humans</div>
@@ -530,7 +544,7 @@ export default function Home() {
           {/* Carousel */}
           <div className="w-full flex flex-col items-center flex-1 min-h-0">
             <div
-              className="w-full flex-1 min-h-0 rounded-2xl flex items-center justify-center mb-3 relative overflow-hidden"
+              className="w-full flex-1 min-h-[288px] h-72 sm:min-h-[192px] sm:h-48 rounded-2xl flex items-center justify-center mb-3 relative overflow-hidden"
               style={{ background: humans[humanIndex].bg }}
             >
               <Image
@@ -538,8 +552,10 @@ export default function Home() {
                 alt={humans[humanIndex].name}
                 fill
                 className="rounded-2xl object-cover"
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
                 sizes="(max-width: 768px) 80vw, 320px"
+                quality={100}
+                unoptimized={true}
               />
               {/* Glass overlay for name/title */}
               <div className="absolute bottom-0 left-0 w-full px-0 py-0">
@@ -588,9 +604,9 @@ export default function Home() {
         </div>
         </section>
         {/* Tribute Labs Project Section */}
-        <section className="w-full flex max-w-5xl mx-auto mb-12">
+        <section className="w-full flex flex-col sm:flex-row gap-4 max-w-5xl mx-auto mb-12">
           {/* Card with icon and label, compact and left-aligned */}
-          <div className="flex bg-white rounded-2xl shadow border border-[#E5E5E5] items-start mr-5 mt-1 px-3 py-2 min-w-[280px] max-w-[340px]" style={{ alignSelf: 'flex-start', marginLeft: 0 }}>
+          <div className="flex bg-white rounded-2xl shadow border border-[#E5E5E5] items-start mr-5 mt-1 px-3 py-2 min-w-0 sm:min-w-[280px] max-w-full sm:max-w-[340px]" style={{ alignSelf: 'flex-start', marginLeft: 0 }}>
             <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FF0099] mr-3 shrink-0 mt-1">
               <img src="/assets/Footer Logo Icon.svg" alt="Tribute Labs Logo" className="w-8 h-10" />
             </div>
@@ -601,40 +617,28 @@ export default function Home() {
           </div>
           {/* Descriptive text, outside the card */}
           <div
-            style={{
-              color: '#4D4D4D',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 14,
-              fontWeight: 400,
-              lineHeight: '24px',
-              flex: '1 0 0',
-              minWidth: 300,
-              marginTop: 0,
-              maxWidth: 'calc(100% - 100px)',
-            }}
+            className="text-[14px] leading-[24px] flex-1 min-w-0 sm:min-w-[300px] mt-0 w-full sm:w-auto text-black"
           >
             Tribute Labs has supported over 30 communities, empowering more than 300 projects through technical guidance, infrastructure, and long-term partnership. Our mission is to help communities thrive by providing the tools and support they need to scale with confidence.
           </div>
         </section>
         {/* Only Early. Always Human. */}
         <h2
+          className="font-semibold text-left mb-4 mt-[100px]"
           style={{
-            alignSelf: 'stretch',
             color: '#000',
             fontFamily: 'Inter, sans-serif',
             fontSize: 54,
             fontWeight: 600,
             lineHeight: '64px',
-            marginBottom: 10,
-            marginTop: 100,
             maxWidth: 1100,
             width: '100%',
             marginRight: 'auto',
             marginLeft: 'auto',
-            textAlign: 'left',
           }}
         >
-          Only Early.<br />Always Human.
+          <span className="hidden sm:inline">Only Early.<br />Always Human.</span>
+          <span className="sm:hidden">Only Early. Always Human.</span>
         </h2>
         <p
           style={{
@@ -697,23 +701,21 @@ export default function Home() {
         {/* FAQ */}
         <section className="max-w-5xl mx-auto mt-24 mb-24 px-0">
         <h2
+          className="font-semibold text-left mb-4 mt-[100px]"
           style={{
-            alignSelf: 'stretch',
             color: '#000',
             fontFamily: 'Inter, sans-serif',
             fontSize: 54,
             fontWeight: 600,
             lineHeight: '64px',
-            marginBottom: 10,
             maxWidth: 1100,
             width: '100%',
-            marginTop: 100,
             marginRight: 'auto',
             marginLeft: 'auto',
-            textAlign: 'left',
           }}
         >
-          Frequently<br />asked questions.
+          <span className="hidden sm:inline">Frequently<br />asked questions.</span>
+          <span className="sm:hidden">Frequently asked questions.</span>
         </h2>
         <p
           style={{
@@ -761,21 +763,18 @@ export default function Home() {
           </h2>
           <div className="flex flex-col items-center w-full">
             <div
-              className="flex items-center border rounded-[32px]"
+              className="flex flex-row flex-nowrap items-center border rounded-[32px] gap-1 sm:gap-4"
               style={{
                 border: '1px solid #F3EAFD',
                 background: '#FFF',
                 padding: '4px 4px 4px 24px',
-                alignItems: 'center',
-                gap: 16,
                 marginBottom: 10,
               }}
             >
               <span
+                className="text-[12px] sm:text-[16px] font-medium"
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: 16,
-                  fontStyle: 'normal',
                   fontWeight: 500,
                   lineHeight: '20px',
                   background: 'radial-gradient(62.52% 11.58% at 50% 50%, #A97DF5 0%, #B19AD9 100%)',
@@ -789,19 +788,16 @@ export default function Home() {
                 Early access for Tribute Labs Members
               </span>
               <button
-                className="flex items-center justify-center"
+                className="flex items-center justify-center text-[14px] sm:text-[16px] px-3 py-1 sm:px-6 sm:py-3"
                 style={{
                   borderRadius: 80,
                   background: '#A97DF5',
                   color: '#FFF',
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: 16,
-                  fontStyle: 'normal',
                   fontWeight: 500,
                   lineHeight: '20px',
-                  padding: '14px 24px',
                   gap: 4,
-                  marginLeft: 16,
+                  marginLeft: 8,
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'background 0.2s',
@@ -815,20 +811,13 @@ export default function Home() {
               </button>
             </div>
             <div
-              style={{
-                marginTop: 10,
-                color: '#A97DF5',
-                fontFamily: 'Inter, sans-serif',
-                fontSize: 16,
-                fontStyle: 'normal',
-                fontWeight: 500,
-                lineHeight: '20px',
-                textAlign: 'center',
-              }}
+              className="mt-2 text-[12px] sm:text-[16px] text-center font-medium"
+              style={{ color: '#A97DF5', fontFamily: 'Inter, sans-serif', lineHeight: '20px' }}
             >
               <span style={{ color: '#888' }}>Not a Tribute Labs Member? </span>
               <a
                 href="#"
+                className="text-[12px] sm:text-[16px]"
                 style={{ color: '#A97DF5', textDecoration: 'none', marginLeft: 4 }}
                 onMouseOver={e => (e.currentTarget.style.color = '#7B61FF')}
                 onMouseOut={e => (e.currentTarget.style.color = '#A97DF5')}
@@ -841,7 +830,7 @@ export default function Home() {
       </section>
       {/* Bottom Gradient Bar above Footer */}
       <div
-          className="absolute bottom-0 left-0 w-full h-40"
+          className="absolute bottom-0 left-0 w-full max-w-full h-40"
           style={{
             zIndex: 0,
             background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',

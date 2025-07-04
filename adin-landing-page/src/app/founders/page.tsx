@@ -59,7 +59,7 @@ export default function FoundersPage() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white relative overflow-x-hidden">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center px-4 pt-20 pb-8 relative min-h-[60vh]">
+      <section className="flex flex-col items-center justify-center text-center px-4 md:px-8 pt-20 pb-8 relative min-h-[60vh] w-full">
         <span className="border border-[#49C17A] text-[#4D4D4D] font-medium text-base leading-5 font-inter px-3 py-1 rounded-full mb-8">
             Founders
           </span>
@@ -135,15 +135,14 @@ export default function FoundersPage() {
             </span>
           </button>
         {/* Down arrow for scroll cue */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 hidden md:block">
             <Image src="/assets/chevron-down.svg" alt="Scroll Down" width={24} height={24} className="animate-bounce opacity-60" />
-          </div>
+        </div>
         {/* Gradient background fixed to viewport bottom, z-0 */}
         <div
-          className="absolute bottom-0 left-0 w-full h-40"
+          className="absolute bottom-0 left-0 w-full h-40 z-0 pointer-events-none"
           style={{
             bottom: '-70px',
-            zIndex: 0,
             background: 'linear-gradient(90deg, #7CF29C 0%, #FFE066 25%, #FFB84D 50%, #FF6F91 75%, #B39DFF 100%)',
             opacity: 0.85,
             WebkitMaskImage:
@@ -155,7 +154,7 @@ export default function FoundersPage() {
       </section>
 
       {/* Content Sections */}
-      <section className="max-w-8xl mx-auto px-8 py-12 pl-0 space-y-4">
+      <section className="w-full max-w-8xl mx-auto px-4 md:px-8 py-12 md:pl-0 space-y-8 md:space-y-4">
         {/* Power Player Section */}
         <div>
           <h2
@@ -189,30 +188,30 @@ export default function FoundersPage() {
           </p>
 
           {/* 4 Feature Cells Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 mb-8 max-w-5xl mx-auto">
             {/* Cell 1 */}
-            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
+            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-4 md:p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
             <div className="text-xs text-[#888] mb-2 font-medium">Deck Feedback</div>
               <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Pitch deck breakdown.</div>
               <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Receive feedback on your deck&apos;s clarity, design, and investor-readiness. ADIN makes sure you&apos;re ready for the room.</div>
               <Image src="/assets/Frame 1.svg" alt="Deck Feedback" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 0, borderRadius: 16}} />
             </div>
             {/* Cell 2 */}
-            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
+            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-4 md:p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
               <Image src="/assets/Frame 2.svg" alt="Pitch Practice" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 16, borderRadius: 16}} />
               <div className="text-xs text-[#888] mb-2 font-medium">Pitch Practice</div>
               <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Practice with ADIN Live.</div>
               <div className="text-sm text-[#222] mb-2" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Pitch in a live voice-chat interface. ADIN will ask real investor-style questions and give you a score to sharpen your story.</div>
             </div>
             {/* Cell 3 */}
-            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
+            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-4 md:p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
               <Image src="/assets/Frame 3.svg" alt="Smart Evaluation" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 16, borderRadius: 16}} />
               <div className="text-xs text-[#888] mb-2 font-medium">Smart Evaluation</div>
               <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>ADIN will analyze & rate your idea.</div>
               <div className="text-sm text-[#222] mb-0" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Upload your deck, GTM, or site. ADIN returns key takeaways, market insights, and competitive breakdown.</div>
             </div>
             {/* Cell 4 */}
-            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
+            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-4 md:p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
             <div className="text-xs text-[#888] mb-2 font-medium">From Pitch to Capital</div>
               <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Secure funding.</div>
               <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Once approved, your startup enters ADIN&apos;s deal room. Investors commit, you choose who signs the check.</div>
@@ -331,10 +330,9 @@ export default function FoundersPage() {
               }}
             >
               <span
+                className="text-[12px] sm:text-[16px] font-medium"
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: 16,
-                  fontStyle: 'normal',
                   fontWeight: 500,
                   lineHeight: '20px',
                   background: 'radial-gradient(62.52% 11.58% at 50% 50%, #A97DF5 0%, #B19AD9 100%)',
@@ -348,19 +346,16 @@ export default function FoundersPage() {
                 Early access for Tribute Labs Members
               </span>
               <button
-                className="flex items-center justify-center"
+                className="flex items-center justify-center text-[14px] sm:text-[16px] px-3 py-1 sm:px-6 sm:py-3"
                 style={{
                   borderRadius: 80,
                   background: '#A97DF5',
                   color: '#FFF',
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: 16,
-                  fontStyle: 'normal',
                   fontWeight: 500,
                   lineHeight: '20px',
-                  padding: '14px 24px',
                   gap: 4,
-                  marginLeft: 16,
+                  marginLeft: 8,
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'background 0.2s',
@@ -374,20 +369,13 @@ export default function FoundersPage() {
               </button>
             </div>
             <div
-              style={{
-                marginTop: 10,
-                color: '#A97DF5',
-                fontFamily: 'Inter, sans-serif',
-                fontSize: 16,
-                fontStyle: 'normal',
-                fontWeight: 500,
-                lineHeight: '20px',
-                textAlign: 'center',
-              }}
+              className="mt-2 text-[12px] sm:text-[16px] text-center font-medium"
+              style={{ color: '#A97DF5', fontFamily: 'Inter, sans-serif', lineHeight: '20px' }}
             >
               <span style={{ color: '#888' }}>Not a Tribute Labs Member? </span>
               <a
                 href="#"
+                className="text-[12px] sm:text-[16px]"
                 style={{ color: '#A97DF5', textDecoration: 'none', marginLeft: 4 }}
                 onMouseOver={e => (e.currentTarget.style.color = '#7B61FF')}
                 onMouseOut={e => (e.currentTarget.style.color = '#A97DF5')}
