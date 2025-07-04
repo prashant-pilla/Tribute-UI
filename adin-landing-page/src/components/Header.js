@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { IoInformationCircleOutline, IoCashOutline, IoPeopleOutline, IoHammerOutline } from 'react-icons/io5';
 import Image from 'next/image';
 
 const navLinks = [
