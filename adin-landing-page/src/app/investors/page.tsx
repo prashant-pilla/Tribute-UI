@@ -234,17 +234,18 @@ export default function InvestorsPage() {
 
             </div>
             {/* Deal Closes - Full Width */}
-            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-6 md:p-8 shadow-sm flex flex-col md:flex-row w-full items-stretch justify-between" style={{minHeight: 220}}>
+            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 shadow-sm flex flex-col md:flex-row items-stretch justify-between" style={{minHeight: 220}}>
               <div className="flex-1 min-w-0 flex flex-col justify-center">
                 <div className="text-xs text-[#888] font-medium mb-1">Deal Closes</div>
                 <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>We handle the backend.</div>
                 <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Diligence, SPV structuring, check writing, and updates all covered by Tribute Labs.</div>
                 
               </div>
-              <div className="flex-shrink-0 flex items-center justify-center mt-8 md:mt-0 md:ml-8" style={{minWidth: 220, maxWidth: 320}}>
-                <Image src="/assets/deal closes.svg" alt="Deal Closes" width={220} height={220} style={{width: '100%', height: 200, objectFit: 'cover', borderRadius: '0 0 16px 16px'}} />
+              <div className="flex-shrink-0 flex items-center justify-center mt-8 md:mt-0 md:ml-8" style={{minWidth: 220, maxWidth: 520}}>
+                <Image src="/assets/deal closes.svg" alt="Deal Closes" width={220} height={220} style={{width: '420px', height: 250, objectFit: 'cover', borderRadius: '0 0 16px 16px'}} />
               </div>
             </div>
+          
           </div>
           {/* Power Player Section */}
         <div>
