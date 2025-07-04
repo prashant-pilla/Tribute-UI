@@ -375,14 +375,14 @@ export default function InvestorsPage() {
           </h2>
           <div className="flex flex-col items-center">
             <div
-              className="flex items-center border rounded-[32px] flex-wrap sm:flex-nowrap"
+              className="flex items-center border rounded-[32px]"
               style={{
                 border: '1px solid #F3EAFD',
                 background: '#FFF',
                 padding: '4px 4px 4px 16px',
                 marginBottom: 10,
               }}
-            >
+              >
               <span
                 className="text-[12px] sm:text-[16px] font-medium"
                 style={{
