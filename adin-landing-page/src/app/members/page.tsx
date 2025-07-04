@@ -27,7 +27,7 @@ export default function MembersPage() {
         a: 'ADIN focuses on a wide range of industries including AI, fintech, biotech, creative tools, climate, and more. The network is open to supporting innovation across sectors.',
       },
       {
-        q: "Wil tokenization fit into ADIN's model?",
+        q: "Will tokenization fit into ADIN's model?",
         a: 'Tokenization is being explored as a way to enhance transparency, governance, and participation within the ADIN ecosystem. More details will be shared as the model evolves.',
       },
       {
@@ -43,6 +43,7 @@ export default function MembersPage() {
       {
         q: 'How much does it cost to join ADIN?',
         a: 'Membership pricing varies depending on your role and level of participation. Please contact us or check our website for the latest details.',
+        open: true,
       },
       {
         q: 'Are there any hidden fees?',

@@ -27,7 +27,7 @@ export default function InvestorsPage() {
         a: 'ADIN focuses on a wide range of industries including AI, fintech, biotech, creative tools, climate, and more. The network is open to supporting innovation across sectors.',
       },
       {
-        q: "Wil tokenization fit into ADIN's model?",
+        q: "Will tokenization fit into ADIN's model?",
         a: 'Tokenization is being explored as a way to enhance transparency, governance, and participation within the ADIN ecosystem. More details will be shared as the model evolves.',
       },
       {
@@ -43,6 +43,7 @@ export default function InvestorsPage() {
       {
         q: 'How much does it cost to join ADIN?',
         a: 'Membership pricing varies depending on your role and level of participation. Please contact us or check our website for the latest details.',
+        open: true,
       },
       {
         q: 'Are there any hidden fees?',
@@ -177,6 +178,7 @@ export default function InvestorsPage() {
               fontWeight: 600,
               lineHeight: '64px',
               marginBottom: 8,
+              marginTop: 30,
               textAlign: 'left',
             }}
           >
@@ -195,19 +197,56 @@ export default function InvestorsPage() {
           >
             Accelerate your decision-making. Execute borderless investment opportunities.
           </p>
-          <div style={{ marginBottom: '24px' }}>
-            <Image
-              src="/assets/real-time voting_submit a deal_investors.png"
-              alt="Real-time voting, submit a deal, investors"
-              width={1600}
-              height={800}
-              style={{ width: '100%', maxWidth: '1600px', height: 'auto', objectFit: 'contain' }}
-              priority
-            />
-          </div>
-        </div>
 
-        {/* Power Player Section */}
+          {/* Asymmetrical Cluster of Cells - Two Columns, One Full-Width Row */}
+          <div className="w-full flex flex-col gap-4 mb-8 mt-8 max-w-5xl mx-auto px-4">
+            <div className="flex flex-col md:flex-row gap-4">
+              {/* Left Column */}
+              <div className="flex flex-col gap-6 flex-1 min-w-0">
+                {/* Real-Time Voting */}
+                <div className="rounded-2xl border border-[#E5E5E5] bg-white p-6 md:p-8 shadow-sm flex flex-col" style={{minHeight: 220}}>
+                  <div className="text-base font-semibold text-black mb-1">Real-Time voting.</div>
+                  <div className="text-sm text-[#222] mb-4">Make investment decisions faster with transparent, community-driven voting.</div>
+                  <Image src="/assets/real time voting.svg" alt="Lane AI Vote" width={400} height={120} style={{width: '100%', height: 350, objectFit: 'contain', borderRadius: 12}} />
+                </div>
+                {/* Expansive Due Diligence */}
+                <div className="rounded-2xl border border-[#E5E5E5] bg-white p-6 md:p-8 shadow-sm flex flex-col" style={{minHeight: 220}}>
+                  <div className="text-base font-semibold text-black mb-1">Expansive due diligence.</div>
+                  <div className="text-sm text-[#222] mb-4">ADIN's agents sweat the details. Technical, business, and beyond and in just 10 minutes.</div>
+                  <Image src="/assets/expansive due diligence.svg" alt="Due Diligence" width={400} height={200} style={{width: '100%', height: 200, objectFit: 'contain', borderRadius: 12}} />
+                </div>
+              </div>
+              {/* Right Column */}
+              <div className="flex flex-col gap-6 flex-1 min-w-0">
+                {/* Submit a Deal */}
+                <div className="rounded-2xl border border-[#E5E5E5] bg-white p-6 md:p-8 shadow-sm flex flex-col" style={{minHeight: 220}}>
+                  <div className="text-base font-semibold text-black mb-1">Submit a deal, earn 10% carry.</div>
+                  <div className="text-sm text-[#222] mb-4">Refer promising companies with just a link or deck. ADIN handles the rest.</div>
+                  <Image src="/assets/submit a deal.svg" alt="Submit a Deal" width={400} height={120} style={{width: '100%', height: 200, objectFit: 'contain', borderRadius: 12}} />
+                </div>
+                {/* Deals hit your inbox */}
+                <div className="rounded-2xl border border-[#E5E5E5] bg-white p-6 md:p-8 shadow-sm flex flex-col" style={{minHeight: 220, padding: 0}}>
+                  <div className="text-base font-semibold text-black mb-1 ml-7 mt-7" style={{padding: '10 10 10 10'}}>Deals hit your inbox.</div>
+                  <div className="text-sm text-[#222] mb-4 ml-7" style={{padding: '0 0 0 0'}}>Stay in the loop with real-time deal alerts, term sheets, and wins.</div>
+                  <Image src="/assets/deals hit your inbox.svg" alt="Deals Inbox" width={400} height={220} style={{width: '100%', height: 420, objectFit: 'cover', borderRadius: '0 0 16px 16px', display: 'block'}} />
+                </div>
+              </div>
+
+            </div>
+            {/* Deal Closes - Full Width */}
+            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-6 md:p-8 shadow-sm flex flex-col md:flex-row w-full items-stretch justify-between" style={{minHeight: 220}}>
+              <div className="flex-1 min-w-0 flex flex-col justify-center">
+                <div className="text-xs text-[#888] font-medium mb-1">Deal Closes</div>
+                <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>We handle the backend.</div>
+                <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Diligence, SPV structuring, check writing, and updates all covered by Tribute Labs.</div>
+                
+              </div>
+              <div className="flex-shrink-0 flex items-center justify-center mt-8 md:mt-0 md:ml-8" style={{minWidth: 220, maxWidth: 320}}>
+                <Image src="/assets/deal closes.svg" alt="Deal Closes" width={220} height={220} style={{width: '100%', height: 200, objectFit: 'cover', borderRadius: '0 0 16px 16px'}} />
+              </div>
+            </div>
+          </div>
+          {/* Power Player Section */}
         <div>
           <h2
             style={{
@@ -218,6 +257,7 @@ export default function InvestorsPage() {
               fontWeight: 600,
               lineHeight: '64px',
               marginBottom: 8,
+              marginTop: 150,
               textAlign: 'left',
             }}
           >
@@ -232,31 +272,46 @@ export default function InvestorsPage() {
               fontWeight: 400,
               lineHeight: '32px',
               marginBottom: '24px',
+              marginLeft: '10px'
             }}
           >
             ADIN combines machine intellegence with the power of an expert hive mind.
           </p>
-          <div style={{marginBottom: '24px' }}>
-            <Image
-              src="/assets/private-network_investors.png"
-              alt="Real-time voting, submit a deal, investors"
-              width={1600}
-              height={800}
-              style={{ width: '100%', maxWidth: '1600px', height: 'auto', objectFit: 'contain' }}
-              priority
-            />
+          {/*Private Network - Full Width */}
+          <div
+            className="rounded-2xl border border-[#E5E5E5] bg-white p-8 shadow-sm flex flex-col md:flex-row items-stretch col-span-1 md:col-span-2 mx-auto"
+            style={{ maxWidth: '1025px' }}
+          >
+              <div className="flex-1 min-w-0 flex flex-col justify-center">
+                <div className="text-xs text-[#888] font-medium mb-1">Private Network</div>
+                <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Access a hand picked investor network.</div>
+                <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Share insights and collaborate with other ADIN Investors on<br/> emerging tech and trends.</div>
+                
+              </div>
+              <div className="flex-shrink-0 flex items-center justify-center mt-8 md:mt-0 md:ml-8" style={{minWidth: 320, maxWidth: 600}}>
+                <Image src="/assets/private_netwwork.png" alt="Private Network" width={320} height={140} style={{width: '420px', height: '240px', objectFit: 'cover', borderRadius: 16}} />
+              </div>
+            </div>
+          {/* Investor and Deal Flow Cells Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5 mb-8 max-w-5xl mx-auto">
+            {/* Cell 1 */}
+            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
+            <div className="text-xs text-[#888] mb-2 font-medium">AI Investor</div>
+              <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>An LLM built for venture-grade signal.</div>
+              <div className="text-sm text-[#222] mb-2" style={{fontFamily: 'Inter', lineHeight: '20px', marginBottom: 30}}>ADIN's AI uncovers patterns in founders, markets, and deal flow helping you invest faster and smarter, grounded in data.</div>
+              <Image src="/assets/ai_investor.png" alt="Deck Feedback" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 0, borderRadius: 16}} />
+            </div>
+            {/* Cell 2 */}
+            <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
+            <div className="text-xs text-[#888] mb-2 font-medium">Deal Flow</div>
+              <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Tap into the collective edge.</div>
+              <div className="text-sm text-[#222] mb-2" style={{fontFamily: 'Inter', lineHeight: '20px', marginBottom: 30}}>The ADIN Member network surfaces deals from top founders, operators, and scouts you won't find anywhere else.</div>
+              <Image src="/assets/deal_flow.png" alt="Pitch Practice" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 16, borderRadius: 16}} />
+            </div>
           </div>
-          <div style={{ marginBottom: '24px' }}>
-            <Image
-              src="/assets/ai-investor-dealflow_investors.png"
-              alt="Real-time voting, submit a deal, investors"
-              width={1600}
-              height={800}
-              style={{ width: '100%', maxWidth: '1600px', height: 'auto', objectFit: 'contain' }}
-              priority
-            />
           </div>
-          </div>
+        </div>
+
 
         {/* FAQ (copied from home page) */}
         <section className="max-w-5xl mx-auto mt-24 mb-24 px-0">

@@ -27,7 +27,7 @@ export default function FoundersPage() {
         a: 'ADIN focuses on a wide range of industries including AI, fintech, biotech, creative tools, climate, and more. The network is open to supporting innovation across sectors.',
       },
       {
-        q: "Wil tokenization fit into ADIN's model?",
+        q: "Will tokenization fit into ADIN's model?",
         a: 'Tokenization is being explored as a way to enhance transparency, governance, and participation within the ADIN ecosystem. More details will be shared as the model evolves.',
       },
       {
@@ -43,6 +43,7 @@ export default function FoundersPage() {
       {
         q: 'How much does it cost to join ADIN?',
         a: 'Membership pricing varies depending on your role and level of participation. Please contact us or check our website for the latest details.',
+        open: true,
       },
       {
         q: 'Are there any hidden fees?',
@@ -60,83 +61,83 @@ export default function FoundersPage() {
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center px-4 pt-20 pb-8 relative min-h-[60vh]">
         <span className="border border-[#49C17A] text-[#4D4D4D] font-medium text-base leading-5 font-inter px-3 py-1 rounded-full mb-8">
-          Founders
-        </span>
-        <h1
-          style={{
-            color: '#000',
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 56,
-            fontStyle: 'normal',
-            fontWeight: 600,
-            lineHeight: '64px',
-            marginBottom: '24px',
+            Founders
+          </span>
+          <h1
+            style={{
+              color: '#000',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 56,
+              fontStyle: 'normal',
+              fontWeight: 600,
+              lineHeight: '64px',
+              marginBottom: '24px',
             marginTop: 0,
-          }}
-        >
+            }}
+          >
           Raise Smarter.<br />Get Backed by the Network.
-        </h1>
-        <p
-          style={{
-            maxWidth: 637,
-            color: '#000',
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 22,
-            fontStyle: 'normal',
-            fontWeight: 400,
-            lineHeight: '32px',
-            marginBottom: '32px',
+          </h1>
+          <p
+            style={{
+              maxWidth: 637,
+              color: '#000',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 22,
+              fontStyle: 'normal',
+              fontWeight: 400,
+              lineHeight: '32px',
+              marginBottom: '32px',
             marginLeft: 'auto',
             marginRight: 'auto',
-          }}
-        >
-          Members earn a 10% carry on deals they submit that ADIN approves and successfully closes.
-        </p>
-        <button
-          style={{
-            display: 'flex',
-            padding: '16px 24px',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: 8,
-            borderRadius: 80,
-            border: '1px solid #49C17A',
-            background: '#000',
-            cursor: 'pointer',
+            }}
+          >
+           Members earn a 10% carry on deals they submit that ADIN approves and successfully closes.
+          </p>
+          <button
+            style={{
+              display: 'flex',
+              padding: '16px 24px',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 8,
+              borderRadius: 80,
+              border: '1px solid #49C17A',
+              background: '#000',
+              cursor: 'pointer',
             marginBottom: 60,
             marginLeft: 'auto',
             marginRight: 'auto',
-          }}
-        >
-          <span
-            style={{
-              color: '#FFF',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 16,
-              fontStyle: 'normal',
-              fontWeight: 500,
-              lineHeight: '24px',
             }}
           >
-            Apply Now
-          </span>
-          <span
-            style={{
-              color: '#49C17A',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 16,
-              fontStyle: 'normal',
-              fontWeight: 500,
-              lineHeight: '24px',
-            }}
-          >
-            →
-          </span>
-        </button>
+            <span
+              style={{
+                color: '#FFF',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 16,
+                fontStyle: 'normal',
+                fontWeight: 500,
+                lineHeight: '24px',
+              }}
+            >
+              Apply Now
+            </span>
+            <span
+              style={{
+                color: '#49C17A',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 16,
+                fontStyle: 'normal',
+                fontWeight: 500,
+                lineHeight: '24px',
+              }}
+            >
+              →
+            </span>
+          </button>
         {/* Down arrow for scroll cue */}
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10">
-          <Image src="/assets/chevron-down.svg" alt="Scroll Down" width={24} height={24} className="animate-bounce opacity-60" />
-        </div>
+            <Image src="/assets/chevron-down.svg" alt="Scroll Down" width={24} height={24} className="animate-bounce opacity-60" />
+          </div>
         {/* Gradient background fixed to viewport bottom, z-0 */}
         <div
           className="absolute bottom-0 left-0 w-full h-40"
