@@ -257,33 +257,33 @@ export default function MembersPage() {
               {/* Industry Standard Card */}
               <div className="rounded-2xl border border-[#E5E5E5] bg-white p-8 flex flex-col justify-between min-h-[370px] relative" style={{boxShadow: '0 1px 8px 0 rgba(80, 80, 120, 0.04)', borderRadius: '24px'}}>
                 <div className="mb-2">
-                  <span className="inline-block bg-[#F6F6F6] text-[#4D4D4D] px-3 py-1 rounded-full mb-7" style={{fontFamily: 'Inter', fontWeight: 500, fontSize: 16, lineHeight: '20px', fontStyle: 'normal'}}>The Industry Standard</span>
-                  <div style={{color: '#000', fontFamily: 'Inter', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px', marginBottom: 8}}>$780,000</div>
-                  <div style={{color: '#000', fontFamily: 'Inter', fontSize: 22, fontStyle: 'normal', fontWeight: 400, lineHeight: '32px', marginBottom: 32}}>Standard Earnings</div>
+                  <span className="inline-block bg-[#F6F6F6] text-[#4D4D4D] px-3 py-1 rounded-full mb-7" style={{fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 16, lineHeight: '20px', fontStyle: 'normal'}}>The Industry Standard</span>
+                  <div style={{color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px', marginBottom: 8}}>$780,000</div>
+                  <div style={{color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 22, fontStyle: 'normal', fontWeight: 400, lineHeight: '32px', marginBottom: 32}}>Standard Earnings</div>
                   <ul className="space-y-4 mb-8">
                     <li className="flex items-center justify-between">
-                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
                         <Image src="/assets/trending-down.svg" alt="Limited Carry Share" width={22} height={22} />
                         Limited Carry Share
                       </span>
-                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>10% of 20% = 2% Total Profits</span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>10% of 20% = 2% Total Profits</span>
                     </li>
                     <li className="flex items-center justify-between">
-                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
                         <Image src="/assets/pie-chart.svg" alt="Small Piece" width={22} height={22} />
                         Small Piece
                       </span>
-                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Minimal Profit Participation</span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Minimal Profit Participation</span>
                     </li>
                     <li className="flex items-center justify-between">
-                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
                         <Image src="/assets/accessibility.svg" alt="Finder Status" width={22} height={22} />
                         Finder Status
                       </span>
-                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>You&apos;re a &quot;finder&quot;, not a Partner.</span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>You&apos;re a &quot;finder&quot;, not a Partner.</span>
                     </li>
                   </ul>
-                  <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #F3655B', background: 'linear-gradient(0deg, rgba(243, 101, 91, 0.10) 0%, rgba(243, 101, 91, 0.10) 100%), #FFF', padding: '8px 12px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#000', overflow: 'hidden', textOverflow: 'ellipsis'}}>
+                  <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #F3655B', background: 'linear-gradient(0deg, rgba(243, 101, 91, 0.10) 0%, rgba(243, 101, 91, 0.10) 100%), #FFF', padding: '8px 12px', fontFamily: 'Inter, sans-serif', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#000', overflow: 'hidden', textOverflow: 'ellipsis'}}>
                     <Image src="/assets/thumbs-down.svg" alt="Limited Upside Potential" width={14} height={14} />
                     Limited Upside Potential
                   </span>
@@ -305,42 +305,42 @@ export default function MembersPage() {
                   maskImage: 'linear-gradient(to bottom, white 49%, transparent 100%)',
                 }} />
                 <div className="mb-2 relative z-10">
-                  <span className="inline-block bg-[#F6F6F6] text-[#4D4D4D] px-3 py-1 rounded-full mb-7" style={{fontFamily: 'Inter', fontWeight: 500, fontSize: 16, lineHeight: '20px', fontStyle: 'normal'}}>ADIN Exclusive</span>
-                  <div style={{color: '#000', fontFamily: 'Inter', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px', marginBottom: 8}}>$3,900,000</div>
-                  <div style={{color: '#000', fontFamily: 'Inter', fontSize: 22, fontStyle: 'normal', fontWeight: 400, lineHeight: '32px', marginBottom: 32}}>Earnings <span style={{fontStyle: 'italic'}}>with</span> ADIN</div>
+                  <span className="inline-block bg-[#F6F6F6] text-[#4D4D4D] px-3 py-1 rounded-full mb-7" style={{fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 16, lineHeight: '20px', fontStyle: 'normal'}}>ADIN Exclusive</span>
+                  <div style={{color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 56, fontStyle: 'normal', fontWeight: 600, lineHeight: '64px', marginBottom: 8}}>$3,900,000</div>
+                  <div style={{color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 22, fontStyle: 'normal', fontWeight: 400, lineHeight: '32px', marginBottom: 32}}>Earnings <span style={{fontStyle: 'italic'}}>with</span> ADIN</div>
                   <ul className="space-y-4 mb-8">
                     <li className="flex items-center justify-between">
-                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
                         <Image src="/assets/sparkles.svg" alt="Premium Carry Share" width={22} height={22} />
                         Premium Carry Share
                       </span>
-                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>50% of 20% = 10% Total Profits</span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>50% of 20% = 10% Total Profits</span>
                     </li>
                     <li className="flex items-center justify-between">
-                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
                         <Image src="/assets/heart.svg" alt="True Partnership" width={22} height={22} />
                         True Partnership
                       </span>
-                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Genuine partner in the upside.</span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Genuine partner in the upside.</span>
                     </li>
                     <li className="flex items-center justify-between">
-                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
+                      <span className="flex items-center gap-3" style={{color: '#000', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px'}}>
                         <Image src="/assets/people.svg" alt="Full Support" width={22} height={22} />
                         Full Support
                       </span>
-                      <span style={{color: '#4D4D4D', fontFamily: 'Inter', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Backed by ADIN&apos;s infrastructure.</span>
+                      <span style={{color: '#4D4D4D', fontFamily: 'Inter, sans-serif', fontSize: 14, fontStyle: 'italic', fontWeight: 400, lineHeight: '20px'}}>Backed by ADIN&apos;s infrastructure.</span>
                     </li>
                   </ul>
                   <div className="flex flex-wrap gap-3 mt-2" style={{width: '100%'}}>
-                    <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222'}}>
+                    <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter, sans-serif', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222'}}>
                       <Image src="/assets/checkmark-circle.svg" alt="5x More Upside" width={14} height={14} />
                       5x More Upside
                     </span>
-                    <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222'}}>
+                    <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter, sans-serif', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222'}}>
                       <Image src="/assets/checkmark-circle.svg" alt="Full Support" width={14} height={14} />
                       Full Support
                     </span>
-                    <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222'}}>
+                    <span className="inline-flex items-center gap-2" style={{borderRadius: 8, border: '1px solid #49C17A', background: 'linear-gradient(0deg, rgba(73, 193, 122, 0.10) 0%, rgba(73, 193, 122, 0.10) 100%), #FFF', padding: '8px 10px', fontFamily: 'Inter, sans-serif', fontSize: 12, fontStyle: 'normal', fontWeight: 400, lineHeight: '20px', color: '#222'}}>
                       <Image src="/assets/checkmark-circle.svg" alt="Shared Success" width={14} height={14} />
                       Shared Success
                     </span>
@@ -388,11 +388,11 @@ export default function MembersPage() {
             {/* Earn 10% Carry Cell */}
             <div className="rounded-3xl border border-[#E5E5E5] bg-white p-10 flex flex-col h-full" style={{minHeight: 340, boxShadow: '0 1px 8px 0 rgba(80, 80, 120, 0.04)'}}>
               <div className="mb-6">
-                <div className="text-base text-black font-normal mb-2" style={{fontFamily: 'Inter'}}>Earn 10% Carry</div>
-                <div className="text-2xl md:text-3xl font-bold text-black mb-2" style={{fontFamily: 'Inter', lineHeight: '32px'}}>
+                <div className="text-base text-black font-normal mb-2" style={{fontFamily: 'Inter, sans-serif'}}>Earn 10% Carry</div>
+                <div className="text-2xl md:text-3xl font-bold text-black mb-2" style={{fontFamily: 'Inter, sans-serif', lineHeight: '32px'}}>
                   Earn 10% Carry on<br/>the Deals You Source
                 </div>
-                <div className="text-base text-[#222] font-normal" style={{fontFamily: 'Inter', lineHeight: '24px'}}>
+                <div className="text-base text-[#222] font-normal" style={{fontFamily: 'Inter, sans-serif', lineHeight: '24px'}}>
                   Introduce great startups, and if ADIN invests, you get a 10% share of the upside. No capital required.
                 </div>
               </div>
@@ -407,11 +407,11 @@ export default function MembersPage() {
             {/* Private Network Cell */}
             <div className="rounded-3xl border border-[#E5E5E5] bg-white p-10 flex flex-col h-full" style={{minHeight: 340, boxShadow: '0 1px 8px 0 rgba(80, 80, 120, 0.04)'}}>
               <div className="mb-6">
-                <div className="text-base text-black font-normal mb-2" style={{fontFamily: 'Inter'}}>Private Network</div>
-                <div className="text-2xl md:text-3xl font-bold text-black mb-2" style={{fontFamily: 'Inter', lineHeight: '32px'}}>
+                <div className="text-base text-black font-normal mb-2" style={{fontFamily: 'Inter, sans-serif'}}>Private Network</div>
+                <div className="text-2xl md:text-3xl font-bold text-black mb-2" style={{fontFamily: 'Inter, sans-serif', lineHeight: '32px'}}>
                   Enter a Private<br/>Curated Community
                 </div>
-                <div className="text-base text-[#222] font-normal" style={{fontFamily: 'Inter', lineHeight: '24px'}}>
+                <div className="text-base text-[#222] font-normal" style={{fontFamily: 'Inter, sans-serif', lineHeight: '24px'}}>
                   Join a vetted network of founders, operators, angels, and technologists handpicked for collaboration.
                 </div>
               </div>
@@ -436,11 +436,11 @@ export default function MembersPage() {
           </div>
           {/* Text Side */}
           <div className="flex-1 flex flex-col justify-center p-4 md:p-0 md:pl-10 md:pr-0 w-full" style={{minWidth: 0, height: '100%'}}>
-            <div className="text-base text-black font-normal mb-2" style={{fontFamily: 'Inter', fontSize: 20}}>Exclusive Access</div>
-            <div className="text-3xl md:text-4xl font-bold text-black mb-2" style={{fontFamily: 'Inter', lineHeight: '38px', fontSize: 34}}>
+            <div className="text-base text-black font-normal mb-2" style={{fontFamily: 'Inter, sans-serif', fontSize: 20}}>Exclusive Access</div>
+            <div className="text-3xl md:text-4xl font-bold text-black mb-2" style={{fontFamily: 'Inter, sans-serif', lineHeight: '38px', fontSize: 34}}>
               Get access to exclusive events.
             </div>
-            <div className="text-base text-[#222] font-normal" style={{fontFamily: 'Inter', lineHeight: '26px', fontSize: 18}}>
+            <div className="text-base text-[#222] font-normal" style={{fontFamily: 'Inter, sans-serif', lineHeight: '26px', fontSize: 18}}>
               Learn and collaborate. From deep-dives to market trend sessions, discover insights to help you move faster.
             </div>
           </div>

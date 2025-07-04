@@ -192,29 +192,29 @@ export default function FoundersPage() {
             {/* Cell 1 */}
             <div className="rounded-2xl border border-[#E5E5E5] bg-white p-4 md:p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
             <div className="text-xs text-[#888] mb-2 font-medium">Deck Feedback</div>
-              <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Pitch deck breakdown.</div>
-              <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Receive feedback on your deck&apos;s clarity, design, and investor-readiness. ADIN makes sure you&apos;re ready for the room.</div>
+                              <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter, sans-serif'}}>Pitch deck breakdown.</div>
+                <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter, sans-serif', lineHeight: '20px'}}>Receive feedback on your deck&apos;s clarity, design, and investor-readiness. ADIN makes sure you&apos;re ready for the room.</div>
               <Image src="/assets/Frame 1.svg" alt="Deck Feedback" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 0, borderRadius: 16}} />
             </div>
             {/* Cell 2 */}
             <div className="rounded-2xl border border-[#E5E5E5] bg-white p-4 md:p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
               <Image src="/assets/Frame 2.svg" alt="Pitch Practice" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 16, borderRadius: 16}} />
               <div className="text-xs text-[#888] mb-2 font-medium">Pitch Practice</div>
-              <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Practice with ADIN Live.</div>
-              <div className="text-sm text-[#222] mb-2" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Pitch in a live voice-chat interface. ADIN will ask real investor-style questions and give you a score to sharpen your story.</div>
+                              <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter, sans-serif'}}>Practice with ADIN Live.</div>
+                <div className="text-sm text-[#222] mb-2" style={{fontFamily: 'Inter, sans-serif', lineHeight: '20px'}}>Pitch in a live voice-chat interface. ADIN will ask real investor-style questions and give you a score to sharpen your story.</div>
             </div>
             {/* Cell 3 */}
             <div className="rounded-2xl border border-[#E5E5E5] bg-white p-4 md:p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
               <Image src="/assets/Frame 3.svg" alt="Smart Evaluation" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 16, borderRadius: 16}} />
               <div className="text-xs text-[#888] mb-2 font-medium">Smart Evaluation</div>
-              <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>ADIN will analyze & rate your idea.</div>
-              <div className="text-sm text-[#222] mb-0" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Upload your deck, GTM, or site. ADIN returns key takeaways, market insights, and competitive breakdown.</div>
+                              <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter, sans-serif'}}>ADIN will analyze & rate your idea.</div>
+                <div className="text-sm text-[#222] mb-0" style={{fontFamily: 'Inter, sans-serif', lineHeight: '20px'}}>Upload your deck, GTM, or site. ADIN returns key takeaways, market insights, and competitive breakdown.</div>
             </div>
             {/* Cell 4 */}
             <div className="rounded-2xl border border-[#E5E5E5] bg-white p-4 md:p-8 flex flex-col items-start shadow-sm" style={{minHeight: 420}}>
             <div className="text-xs text-[#888] mb-2 font-medium">From Pitch to Capital</div>
-              <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter'}}>Secure funding.</div>
-              <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter', lineHeight: '20px'}}>Once approved, your startup enters ADIN&apos;s deal room. Investors commit, you choose who signs the check.</div>
+                              <div className="text-xl font-bold text-black mb-1" style={{fontFamily: 'Inter, sans-serif'}}>Secure funding.</div>
+                <div className="text-sm text-[#222] mb-4" style={{fontFamily: 'Inter, sans-serif', lineHeight: '20px'}}>Once approved, your startup enters ADIN&apos;s deal room. Investors commit, you choose who signs the check.</div>
               <Image src="/assets/Frame 4.svg" alt="Secure Funding" width={800} height={200} style={{width: '100%', height: 'auto', objectFit: 'cover', marginBottom: 0, borderRadius: 16}} />
             </div>
           </div>
