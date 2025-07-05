@@ -118,7 +118,7 @@ function FaqSection() {
   const questions: Record<FaqCategory, FaqItem[]> = {
     General: [
       {
-        q: 'What is AdIn?',
+        q: 'What is ADIN?',
         a: "ADIN is an AI-first, community-powered venture DAO that combines a network of AI-agents with human insight to identify and fund the best early-stage startups. Its engine ingests a company's deck or website and, in minutes, produces a comprehensive report covering team background, market landscape, competitive positioning, and evaluations from a five-agent AI 'venture board.' Investors review these data-rich findings and vote. By marrying AI's analytical speed with the collective wisdom of a diverse investor community, ADIN enables faster, more transparent capital deployment and broader access to high-potential deals.",
         open: true,
       },
@@ -131,7 +131,7 @@ function FaqSection() {
         a: 'ADIN focuses on a wide range of industries including AI, fintech, biotech, creative tools, climate, and more. The network is open to supporting innovation across sectors.',
       },
       {
-        q: "Will tokenization fit into ADIN&apos;s model?",
+        q: "Will tokenization fit into ADIN's model?",
         a: 'Tokenization is being explored as a way to enhance transparency, governance, and participation within the ADIN ecosystem. More details will be shared as the model evolves.',
       },
       {
@@ -347,7 +347,7 @@ export default function Home() {
           </p>
           <div className="w-full flex justify-center mb-2">
             <button
-              className="flex items-center group transition-colors px-4 py-4 gap-4 sm:px-2 sm:py-1 sm:gap-2"
+              className="flex items-center group transition-colors px-4 py-4 gap-4 sm:px-2 sm:py-1 sm:gap-2 mt-2"
               style={{
                 borderRadius: 12,
                 background: '#FCF0D1',
